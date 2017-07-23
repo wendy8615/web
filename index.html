@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>80Years</title>
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- 導覽列nav-->
+    <nav class="navbar navbar-fixed-top a_top">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#header_index">知識焦慮</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#section_introduction">INTRODUCTION</a></li>
+            <li class="active"><a href="#section_works">WORKS <span class="sr-only">(current)</span></a></li>
+            <li><a href="#section_contact">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- 首頁-->
+    <header id="header_index">
+      <div class="container">
+        <div class="icon">
+          <div class="btn"><span>知識焦慮</span></div>
+        </div>
+      </div>
+      <div class="explore a_top">EXPLORE</div>
+    </header>
+    <!-- INTRODUCTION頁面-->
+    <section id="section_introduction">
+      <div class="container">
+        <div class="row rotate_int">
+          <div class="wrap">
+            <div class="box" id="app">
+              <h2>專業證照</h2>
+              <ul v-for="li_license in licensedata">
+                <li>{{li_license}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-6 col-sm-offset-1 rotate_int">
+            <h2 class="r1 r1text rotate_int">INTRODUCTION</h2>
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+        <div class="row rotate_int">
+          <div class="col-sm-4 rotate_int"><img class="tri tri2" src="img/me_photo.png" alt=""></div>
+          <div class="col-sm-8 rotate_int">
+            <h2 class="r1 r1text">廖雅雯</h2>
+            <h5 class="r3 r3text">Ya-wen Liao</h5>
+            <h3 class="r2 r2text">Website Design / Development</h3>
+            <h3 class="r2 r2text">嘉南藥理大學 資訊科技系 畢業</h3>
+          </div>
+        </div>
+        <!-- 第三行標題-->
+        <div class="row">
+          <div class="col-sm-8">
+            <h3 class="abilityh3">能力值 :</h3>
+            <ul class="ability">
+              <li class="abilityli_html">HTML</li>
+              <li class="abilityli_css">CSS</li>
+              <li class="abilityli_js">JavaScript</li>
+              <li class="abilityli_ai">AI</li>
+              <li class="abilityli_ps">PS</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="section_introduction2">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2 class="r1text rotate_int">EXPERIENCE</h2>
+            <div class="timeline"></div>
+            <div class="c1"></div>
+            <div class="years">2013-2014
+              <div class="work_job">捷雷科技-行政人員</div>
+            </div>
+            <div class="c2"></div>
+            <div class="years2">2014-2017
+              <div class="work_job">嘉南藥理大學-計畫專任助理</div>
+              <div class="work_job">資訊安全檢測與網站弱點分析計畫<br>-工讀(2013-2016)</div>
+              <div class="work_job">聖茂生物科技-接案</div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <h3 class="r2text">轉換跑道的路上，已經留下了一點影子!<br><br>在「捷雷科技」工作內容：<br>進銷貨、DM設計、名片設計、海報設計製作(帆布設計)等。<br><br>在嘉南藥理大學資訊多媒體應用系工作內容：<br>辦理研習及體驗營活動、海報設計製作、系所DM、L夾、團體服製作、學校科系網頁建置及維護、設備使用管理及指導、教室與專題實驗室電腦修繕管理及計畫行政與採購核銷相關事務等。<br><br>工作之餘另外有打工及個別接案，參與資安網站弱點掃描計畫，製作弱點檢測平台教學影片、網站架站工具分析及架站系統使用與弱點修補建議，個別接案聖茂生技之DM設計製作、商品包裝、網站建置。</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="section_works">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="border_1"></div>
+            <h2 class="r1text rotate_int">WORKS</h2>
+            <p>摸索闖蕩｜持續學習</p><br><br>
+            <p>也正在一步步實踐自己的理想</p><br><br><br><br>
+            <p>不年輕</p><br><br>
+            <p>但還保留一點時間可以作夢</p>
+          </div>
+          <div class="col-sm-8">
+            <div class="workspic"><a href="web.html"><img class="pic" src="img/web_f.JPG" alt="">
+                <div class="tag">網頁設計<i class="fa fa-code"></i></div></a></div>
+            <div class="workspic"><a href="graphic.html"><img class="pic" src="img/post2D.JPG" alt="">
+                <div class="tag">平面設計<i class="fa fa-th"></i></div></a></div>
+            <div class="workspic"><a href="movie_3d.html"><img class="pic" src="img/3d_f.JPG" alt="">
+                <div class="tag">3D模型/影片製作<i class="fa fa-simplybuilt"></i></div></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="section_contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2 class="r1text">CONTACT | YaWen</h2>
+            <p>EMAL: wendy8615@yahoo.com.tw </p>
+            <p>TEL: +886910945770 </p><a href="https://www.facebook.com/yawen1991" target="_blank"><img src="https://cdn0.iconfinder.com/data/icons/yooicons_set01_socialbookmarks/512/social_facebook_box_blue.png"></a><a href="https://codepen.io/yawen1991/" target="_blank"><img src="https://blog.codepen.io/wp-content/uploads/2012/06/Button-Fill-Black-Large.png"></a>
+          </div>
+          <div class="col-sm-6"></div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

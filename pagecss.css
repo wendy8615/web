@@ -1,0 +1,100 @@
+@charset "UTF-8";
+* {
+  font-family: "Source Sans Pro", "微軟正黑體";
+}
+
+html, body {
+  font-size: 14px;
+  overflowX: hidden;
+}
+
+nav.navbar {
+  transition: 0.5s;
+  background-color: transparent;
+  color: transparent;
+  background-color: #e67a7a;
+  color: #e67a7a;
+}
+nav.navbar a {
+  transition: 0.5s;
+  background-color: transparent;
+  color: transparent;
+  color: #FFF;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+nav.navbar a:hover {
+  color: #ffebb7;
+  background-color: #e67a7a;
+}
+
+nav.navbar.a_top {
+  background-color: transparent;
+  color: transparent;
+  color: #e67a7a;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+nav.navbar.a_top .navbar-right a {
+  color: #e67a7a;
+  background-color: transparent;
+  letter-spacing: 1px;
+}
+nav.navbar.a_top .navbar-right a:hover {
+  color: #ffebb7;
+  background-color: #e67a7a;
+}
+
+section {
+  padding: 60px 0px;
+  position: relative;
+  
+}
+section .row h2 {
+  padding: 10px;
+}
+section .row .col-sm-4 {
+  display: flex;
+  justify-content: space-around;
+}
+section .row .col-sm-4 a {
+  background-color: #e67a7a;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 100%;
+  height: 460px;
+
+}
+section .row .col-sm-4 img {
+  width: 100%;
+  height: auto;
+  transition: all 0.5s;
+}
+section .row .col-sm-4 img:hover {
+  transform: scale(1.2, 1.2);
+}
+section .row .col-sm-4 img span {
+  text-align: center;
+  line-height: 30px;
+}
+section#section_contact {
+  height: 300px;
+  background-image: url(https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/13590347_1138275229528003_9023143089089776911_n.jpg?oh=4329f0eebe802e686ccb96dc2e920458&oe=59C9F0D1);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed; }
+  section#section_contact h2.r1text {
+    color: #FFF;
+    margin-top: 0;
+    font-size: 30px; }
+  section#section_contact p {
+    color: #FFF;
+    font-size: 14px; }
+  section#section_contact img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px; }
