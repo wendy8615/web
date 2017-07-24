@@ -9,7 +9,7 @@ $(".explore,.navbar").removeClass("a_top")
 //按導覽列btn滑到頁面效果,監看a標籤是否有click的動作,有就呼叫funcion
 $(document).on('click','a',function(event){
   //預防它直接點擊後跳頁
-  event.preventDefault();
+  //event.preventDefault();
   //這個被按的this去抓attr的href
   var target = $(this).attr("href");
   $('html,body').animate({
