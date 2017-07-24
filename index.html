@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>80Years</title>
+    <title>80Years知識焦慮</title>
+    <!--meta(name="viewport" content="width=device-width, user-scalable=no")-->
     <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -36,18 +37,9 @@
     <section id="section_introduction">
       <div class="container">
         <div class="row rotate_int">
-          <div class="wrap">
-            <div class="box" id="app">
-              <h2>專業證照</h2>
-              <ul v-for="li_license in licensedata">
-                <li>{{li_license}}</li>
-              </ul>
-            </div>
-          </div>
           <div class="col-sm-6 col-sm-offset-1 rotate_int">
             <h2 class="r1 r1text rotate_int">INTRODUCTION</h2>
           </div>
-          <div class="col-sm-4"></div>
         </div>
         <div class="row rotate_int">
           <div class="col-sm-4 rotate_int"><img class="tri tri2" src="img/me_photo.png" alt=""></div>
@@ -69,6 +61,16 @@
               <li class="abilityli_ai">AI</li>
               <li class="abilityli_ps">PS</li>
             </ul>
+          </div>
+          <div class="col-sm-4">
+            <div class="wrap">
+              <div class="box" id="app">
+                <h2>專業證照</h2>
+                <ul v-for="li_license in licensedata">
+                  <li>{{li_license}}</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
