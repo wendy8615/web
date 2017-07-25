@@ -1,0 +1,132 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>防災高手-桌遊</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="colorbox.css" />
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="jquery.colorbox.js"></script>
+<script src="jquery.colorbox-min.js"></script>
+<script>
+$(function(){
+$('#cardli').click(function(){ $('html,body').animate({scrollTop:$('#firecard').offset().top},1500); }); 
+$('#gameli').click(function(){ $('html,body').animate({scrollTop:$('#firegame').offset().top}, 1500); }); 
+$('#mapli').click(function(){ $('html,body').animate({scrollTop:$('#firemap').offset().top}, 1500); });
+
+});
+
+</script>
+
+<script>
+$(function () {
+	$(window).scroll(function () {
+    var scrollVal = $(this).scrollTop();
+	 		if(scrollVal <= 200 && scrollVal >10){
+     /* 如果滾動的物件捲動 > 500 則觸發指定的動作。*/
+	 
+	     $("#fire1show").animate({ top:'420px',opacity:1}, 300 ,'swing');
+		
+		         }
+		if(scrollVal > 201 && scrollVal <=300){
+     /* 如果滾動的物件捲動 > 500 則離開的動作。*/
+	      $("#fire1show").animate({ top:'300px',opacity:0 }, 300 ,'swing');
+	
+		         }
+		 if(scrollVal >1000 && scrollVal <=1300){
+     /* 如果滾動的物件捲動 > 500 則觸發指定的動作。*/
+	      $("#fire2show").animate({ top:'1350px',opacity:1}, 300 ,'swing');
+		         }
+		 if(scrollVal > 1301 && scrollVal <=1400){
+     /* 如果滾動的物件捲動 > 500 則離開的動作。*/
+	      $("#fire2show").animate({ top:'1550px',opacity:0}, 300 ,'swing');
+	
+		         }
+		 if(scrollVal >4000 && scrollVal <=4200){
+     /* 如果滾動的物件捲動 > 500 則觸發指定的動作。*/
+	      $("#fire3show").animate({ top:'4450px',opacity:1}, 300 ,'swing');
+		         }
+		 if(scrollVal > 4201 && scrollVal <=4550){
+     /* 如果滾動的物件捲動 > 500 則離開的動作。*/
+	      $("#fire3show").animate({ top:'4600px' ,opacity:0}, 300 ,'swing');
+	
+		         }
+	
+  });
+});
+</script>
+<script>
+			$(document).ready(function(){
+				//Examples of how to assign the Colorbox event to elements
+				$(".group1").colorbox({rel:'group1'});
+				
+				
+				//Example of preserving a JavaScript event for inline calls.
+				$("#click").click(function(){ 
+					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+					return false;
+				});
+			});
+		</script>
+</head>
+
+<body>
+<div class="firebanner">
+<img src="img/fire-banner.png" width="100%" height="auto"> </div>
+<div class="firebtn">
+<li id="cardli"><a href="#firecard"><img src="img/firebtn02.png" width="130px" height="auto"></a></li>
+<li id="gameli"><a href="#firegame"><img src="img/firebtn01.png" width="130px" height="auto"></a></li>
+<li id="mapli"><a href="#firemap"><img src="img/firebtn04.png" width="130px" height="auto"></a></li>
+</div>
+<div id="firecard">
+<h2>遊戲卡牌種類</h2>
+<ul>
+<li>人力卡：屬於玩家生命值，亦可進行救援行動，每位玩家人力卡顏色均不同。</li>
+<li>災害卡：每張災害卡上描述各種需要營救之災害，災害卡上有救災時所需物品和數量，玩家要針對卡牌上的所需物資進行收集，一旦收集完成，即完成此項救災活動。</li>
+<li>功能卡：包含水、防災包、消防包（滅火器、盥洗用品）、防水包（沙包、木板）、避難所、以及命運卡。<br>
+命運卡：PASS、誣賴卡、更換災害卡、更換手牌、地區更換
+1.PASS卡：當回合可以無需進行救援行動,直接略過進行下位玩家（PASS只能對自己使用）。<br>
+2.誣陷卡：當自己無法進行救援行動時，可將此次救援行動轉嫁給其他玩家，並且對方玩家的手牌在此次救援行動中可被任意抽取１張不可使用，被誣陷之玩家如果沒有進行救援行動，需損失一張人力卡。
+<br>
+3.更換災害：當玩家使用此張卡時，玩家可自行選擇其他災害卡進行救援。<br>
+4.更換手牌：可更換手中5張手牌，原本5張全部回收並且再重抽5張進行救援。<br>
+5.地區更換:可更換該災害的地區卡並進行救援。<br>
+</li>
+<li>地區救援卡:由永康區30個里組合而成，每張卡都有說明此里具有之輔助救援能力，玩家可藉由使卡片輔助救援。<br>
+</li>
+</div>
+<div id="fire1show">
+ <img src="img/firecard/show1-01.png" width="250px" height="auto"></div> 
+<a class="group1" href="img/卡牌-01.png"> <img src="img/卡牌-01.png" class="big"></a></br>
+<a class="group1" href="img/firecard/地區卡-01.png"> <img src="img/firecard/地區卡-01.png" class="big"></a>
+<div id="fire2show">
+ <img src="img/firecard/show2-01.png" width="250px" height="auto"></div> 
+<div id="firegame">
+<h2>遊戲玩法</h2>
+<ul>
+<li>起始:將功能卡混合洗，每一位玩家發取5張混合卡牌、2張人力卡，每回合玩家手上街保持5張混合卡牌。</li>
+<a class="group1" href="img/firecard/1-01.png"><img src="img/firecard/1-01.png" width="500px" height="auto"></a>
+<p class="text">災害卡區上擺出相對的災害卡，並在開始遊戲時第一位玩家針對任何一災害卡堆翻出一張進行救災。並為災害抽取一張地區卡，放置災害卡旁。每個災害只可翻取一張地區卡，地區卡上的功能，可輔助救援該災害。　</p>
+<a class="group1" href="img/firecard/2-01.png"><img src="img/firecard/2-01.png" width="500px" height="auto"></a>
+<li>進行中:每位玩家開始擲骰子，並且依點數行走步數，當走到某災害時，開始針對此一災害進行救災。玩家  需要進行救災行動（一回合每位玩家只能釋出1張卡牌），釋出1張卡牌後需再從卡牌堆抽取一張即可過關，玩家若出人力卡則無需抽取卡牌。</li>
+<a class="group1" href="img/firecard/3-01.png"><img src="img/firecard/3-01.png"  width="500px" height="auto"></a>
+<p class="text">
+當玩家無法進行救援時，無論是人力卡在玩家身邊或玩家人力卡放在災害卡的救援區中皆需損失一張人力卡，放在救援中的人力卡需收回並損失，玩家每損失一張人力卡，玩家手中的5張手牌將損失，重新抽取5張手牌，損失的5張手牌將回收於卡牌堆中。如下圖</p>
+<a class="group1" href="img/firecard/4-7-01.png"><img src="img/firecard/4-7-01.png" width="800px" height="auto"></a>
+<p class="text">救援時，只能放置尚未救援額滿的物資，當物資已滿即不可再放此救援卡，玩家使用PASS卡和誣陷卡不用進行救災行動，但使用更換災害、更換手牌、地區更換則依舊需要進行該次救災活動，玩家使用命運後，就損失該張命運卡並從混合卡堆中抽一張。（如圖7）</p>
+<br>
+<a class="group1" href="img/firecard/8-9-01.png"><img src="img/firecard/8-9-01.png" width="800px" height="auto"></a>
+</div>
+<div id="fire3show">
+<img src="img/firecard/show3-01.png" width="250px" height="auto"></div> 
+<div id="firemap">
+<h2>遊戲地圖</h2>
+
+
+<a class="group1" href="img/firecard/map.png"> <img src="img/firecard/map.png" width="800px" height="auto" class="big"> </a>
+<div class="firehome">
+<li><a href="game.html"><img src="img/home-01.png" width="60px" height:"auto"></a></li></div>
+</body>
+</html>
+

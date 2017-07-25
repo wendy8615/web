@@ -1,0 +1,252 @@
+* {
+  position: relative;
+  box-sizing: border-box;
+  font-family: arial;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  height: 100%;
+  background: linear-gradient(#00ace6, #ccccff, #bc2a8d, #cd486b, #e95950, #fbad50, #fccc63);
+}
+.wrapper .camera {
+  width: 200px;
+  height: 200px;
+  border: 10px solid white;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ballUP 0.5s 1s both, ballDown 0.2s 1.5s ease-in forwards, cameraIn 0.5s 2s forwards;
+  perspective: 500px;
+}
+.wrapper .camera .lens {
+  height: 100px;
+  width: 100px;
+  border: solid 15px white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: lensIn 0.5s 1.8s backwards;
+}
+.wrapper .camera .flashlight {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  animation: flashlightIn 0.3s 2.2s backwards;
+}
+.wrapper .camera .flashlight:after {
+  content: "";
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  animation: flash 0.3s 3s;
+}
+.wrapper .camera .picture {
+  width: 250px;
+  height: 250px;
+  border: 10px solid white;
+  border-bottom: 20px solid white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ccc;
+  animation: pictureIn 1s 3.5s backwards, pictureFlip 1s 4.5s;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.wrapper .camera .picture .text {
+  opacity: 0;
+  transform: translateX(-20%);
+}
+.wrapper .camera .picture:hover {
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  border: 0;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.wrapper .camera .picture:hover .text {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 1s 0.2s;
+}
+.wrapper .camera .picture .imgbox {
+  height: 300px;
+  overflow: hidden;
+}
+.wrapper .camera .picture .imgbox img {
+  width: 100%;
+}
+.wrapper .camera .picture:hover ~ .mouse {
+  visibility: hidden;
+}
+.wrapper .camera .picture .text h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 30px;
+  color: #333;
+}
+.wrapper .camera .picture .text h2 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 26px;
+  color: #333;
+}
+.wrapper .camera .picture .mouse {
+  text-align: center;
+  color: white;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: mouseHover 1.5s 5.5s;
+  opacity: 0;
+}
+
+@keyframes ballUP {
+  0% {
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    top: 10%;
+    width: 5px;
+    height: 5px;
+  }
+}
+@keyframes ballDown {
+  0% {
+    top: 10%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+@keyframes cameraIn {
+  0% {
+    width: 5px;
+    height: 5px;
+  }
+  50% {
+    width: 250px;
+    height: 250px;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+  }
+}
+@keyframes lensIn {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    width: 120px;
+    height: 120px;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+  }
+}
+@keyframes flashlightIn {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes pictureIn {
+  0% {
+    top: 100%;
+    transform: translate(-50%, 0);
+    height: 0;
+    width: 120px;
+    opacity: 0;
+  }
+  100% {
+    height: 120px;
+    width: 120px;
+    top: 100px;
+    transform: translate(-50%, 0);
+  }
+}
+@keyframes pictureFlip {
+  0% {
+    height: 120px;
+    width: 120px;
+    top: 100px;
+    transform: translate(-50%, 0) rotateX(0deg);
+  }
+  100% {
+    height: 250px;
+    width: 250px;
+    transform: translate(-50%, 0) rotateX(360deg);
+  }
+}
+@keyframes mouseHover {
+  0% {
+    top: 150%;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    top: 60%;
+  }
+}

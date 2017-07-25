@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Teach Studio桌遊設計工作室</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="colorbox.css" />
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="jquery.colorbox.js"></script>
+<script src="jquery.colorbox-min.js"></script>
+<script>
+$(function(){
+$('#tophome').click(function(){ $('html,body').animate({scrollTop:$('.header').offset().top},1500); }); 
+$('#teamli').click(function(){ $('html,body').animate({scrollTop:$('.teamgroup').offset().top}, 1500); }); 
+$('#emailli').click(function(){ $('html,body').animate({scrollTop:$('#emailcell').offset().top}, 1500); });
+
+});
+
+</script>
+</head>
+
+<body>
+<div class="header">
+<img src="img/TeachLOGO.png"></div>
+<div class="indexmanu">
+<li id="indexli">首頁</li>
+<li id="teamli">團隊介紹</li>
+<a href="game.html"><li>作品集</li></a>
+<li id="emailli">聯絡我們</li>
+</div>
+<div id="tophome">
+<img src="img/top-01.png" width="50px" height="auto"> </div>
+<div id ="all">
+	<div id="pro"><img src="1.png" width="100%" height="auto"></div>
+  <div id="menudot"><img src="dot-green.png"><img src="dot-white.png"></div>
+</div>
+<script>
+ $(document).ready(function() {
+    $("#menudot img:eq(0)").click(function(){
+		$("#pro img").fadeOut(400,function(){
+		 	$("#pro img").attr("src","1.png")
+		    $("#pro img").fadeIn()
+			})
+		$("#menudot img").attr("src","dot-white.png")
+		$("#menudot img:eq(0)").attr("src","dot-green.png")
+		})
+	$("#menudot img:eq(1)").click(function(){
+		$("#pro img").fadeOut(400,function(){
+			$("#pro img").attr("src","3.png")
+		    $("#pro img").fadeIn()
+			})
+		$("#menudot img").attr("src","dot-white.png")
+		$("#menudot img:eq(1)").attr("src","dot-green.png")
+		})
+	
+		setInterval(auto,1500);
+		function auto(){
+			n++;
+			if(n>3){
+				n=0;
+				$("#pro img").fadeOut(400,function(){
+					$("#pro img").attr("src",n+".png");
+					$("#pro img").fadeIn()
+					})
+				    $("#menudot img").attr("src","dot-white.png")
+		            $("#menudot img:eq("+n+")").attr("src","dot-green.png")
+				}
+			};
+});
+ </script>
+ <hr>
+ <div class="teamgroup">
+ <table class="group"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="200px"><img src="img/小火龍.png" width="150px" height="auto"></td>
+    <td width="600px">總監 劉川綱 / 嘉南藥理大學資訊多媒體應用系 副教授</td>
+  </tr>
+  <tr>
+    <td width="200px"><img src="img/小火龍.png" width="150px" height="auto">
+   </td>
+    <td width="600px"> 遊戲設計 劉川綱 企劃遊戲創意玩法，針對客戶需求</td>
+  </tr>
+  <tr>
+    <td width="200px"><img src="img/小火龍.png" width="150px" height="auto"></td>
+    <td  width="600px">美術設計 劉川綱 / 主要場景設計繪畫</td>
+  </tr>
+   <tr>
+    <td width="200px"><img src="img/小火龍.png" width="150px" height="auto"></td>
+    <td  width="600px">美術設計 劉川綱 / 繪製主角風格設計</td>
+  </tr>
+</table>
+<hr>
+<div id="emailcell">
+<h3>聯絡方式</h3>
+<p>嘉南藥理大學資訊多媒體應用系 劉川綱 先生</br>
+     電話:06-2664911#5705</br>
+     Email:chgliu@mail.cnu.edu.tw</br>
+</p>
+</div>
+</body>
+</html>
+

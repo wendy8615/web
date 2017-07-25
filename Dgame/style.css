@@ -1,0 +1,1016 @@
+@charset "utf-8";
+@media only screen and (max-width:1920px)and (min-width: 1600px) {
+body{
+	padding:0;
+	margin:0;
+	}
+html{
+	cursor: url(cursor/cursor.cur),default;
+	font-family: "微軟正黑體";
+	font-size: 60px;
+	color: #FFF;
+	text-align: center;
+	}
+a:hover,li{
+	cursor: url(cursor/handcursor.cur),default;
+	text-decoration: none;
+	}
+.topimg{
+	position:relative;
+	z-index:0;
+	top:0px;
+	}
+.topimg img{
+	 width:100%;
+	 height:auto;
+	}
+
+.bottomimg{
+	position:fixed;
+	z-index:1;
+	bottom:-10px;
+	}
+.bottomimg img{
+	width:100%;
+	height: auto;
+	}
+#Disaster1{
+	position:fixed;
+	z-index:2;
+	left:100px;
+	bottom:0;
+	width:auto;
+	height:700px;
+	animation-name:jump;
+	-webkit-animation-name:jump;
+	-moz-animation-name:jump;
+	-ms-animation-name:jump;
+	animation-duration:2s;
+	-webkit-animation-duration:2s;
+	-moz-animation-duration:2s;
+	-ms-animation-duration:2s;
+	animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	
+	}
+#Disaster2{
+	position:fixed;
+	z-index:3;
+	right:100px;
+	
+	bottom:0;
+	width:auto;
+	height:620px;
+	animation-name:jump2;
+	-moz-animation-name:jump2;
+	-ms-animation-name:jump2;
+	-webkit-animation-name:jump2;
+	animation-duration:2s;
+	-webkit-animation-duration:2s;
+	-moz-animation-duration:2s;
+	-ms-animation-duration:2s;
+	animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-o-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+	}
+#Image5{
+	position:fixed;
+	z-index:7;
+	left:150px;
+	bottom:30px;
+	width:450px;
+	height:auto;
+
+	}
+
+#Image6{
+	position:fixed;
+	z-index:8;
+	right:100px;
+	bottom:30px;
+	width:450px;
+	height:auto;
+	}
+/*
+#car{
+	position:absolute;
+	z-index:6;
+	bottom:0px;
+	left:0px;
+	animation-name: car;
+    animation-duration:3s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: 1;
+	animation-fill-mode: both;
+	/*位置在最後一個地方*/
+	
+#bobo{
+	position:absolute;
+	z-index:6;
+	right:30px;
+	top:10px;
+	animation-name:move;
+	-moz-animation-name:move;
+	-ms-animation-name:move;
+	-webkit-animation-name:move;
+	animation-duration:2s;
+	-webkit-animation-duration:2s;
+	-moz-animation-duration:2s;
+	-ms-animation-duration:2s;
+	animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	width:300px;
+	height:auto; 
+	}
+@keyframes jump{
+	0%{
+		bottom:-15px;
+		}
+	50%{
+		bottom:0px;
+		}
+	100%{
+		bottom:-15px;
+		}
+}
+@-webkit-keyframes jump{
+	0%{
+		bottom:-15px;
+		}
+	50%{
+		bottom:0px;
+		}
+	100%{
+		bottom:-15px;
+		}
+	}
+@keyframes jump2{
+	0%{
+		bottom:0px;
+		}
+	50%{
+		bottom:-15px;
+		}
+	100%{
+		bottom:0px;
+		}
+}
+@-webkit-keyframes jump2{
+	0%{
+		bottom:0px;
+		}
+	50%{
+		bottom:-15px;
+		}
+	100%{
+		bottom:0px;
+		}
+}
+@keyframes move{
+	0%{
+		top:15px;
+		}
+	50%{
+		top:10px;
+		}
+	100%{
+		top:15px;
+		}
+}
+
+.firehome{
+	right: 0;
+	z-index: 20;
+	top: 600px;
+	position: fixed;
+	}
+.firehome li{
+	list-style-type: none;
+	}
+.firehome li a{
+	background-color: #333;
+	font-size: 14px;
+	color: #CCC;
+	text-decoration: none;
+	}	
+.firebanner{
+	position:fixed;
+	z-index:19;
+	top:0;
+	}
+.firebanner img{
+	box-shadow:2px 2px 2px rgba(20%,20%,40%,0.5);
+	}
+.firebtn{
+	right:20px;
+	top: 180px;
+	position:fixed;
+	}
+.firebtn li{
+	display:inline-block;
+	}
+#firecard{
+	width: 800px;
+	height: auto;
+	position: relative;
+	color: #333;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	padding-top: 200px;
+	}
+#firecard h2{
+	color: #630;
+	font-size: 24px;
+	padding-left: 20px;
+	}
+#firecard li{
+	color: #666;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	line-height: 35px;
+	}
+.big{
+	width: 800px;
+	height: auto;
+	}
+
+#firegame{
+	padding-top: 200px;
+	width: 800px;
+	height: auto;
+	position:relative;
+	color: #333;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	}
+#firegame h2{
+	color: #630;
+	font-size: 24px;
+	padding-left: 20px;
+	}
+.text{
+	color: #666;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	line-height: 30px;
+	}
+#firegame li{
+	color: #666;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	line-height: 30px;
+	}
+#firemap{
+	padding-top: 200px;
+	width: 800px;
+	height: auto;
+	position:relative;
+	color: #333;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	}
+#firemap h2{
+	color: #630;
+	font-size: 24px;
+	padding-left: 20px;
+	}
+/*'--fire顯示圖片--*/
+#fire1show{
+	top:460px;
+	left:100px;
+	position:absolute;
+	opacity:0;
+	}
+#fire2show{
+	top:1500px;
+	left:100px;
+	position:absolute;
+	opacity:0;
+	}
+#fire3show{
+	top:4200px;
+	left:100px;
+	position:absolute;
+	opacity:0;
+	}
+/*ear page2*/
+#earcard{
+	width: 800px;
+	height: auto;
+	position: relative;
+	color: #333;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	padding-top: 200px;
+	}
+#earcard h2{
+	color: #630;
+	font-size: 24px;
+	padding-left: 10px;
+	}
+#earcard li{
+	color: #666;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	line-height: 30px;
+	}
+#earcard{
+	width: 800px;
+	height: auto;
+	position: relative;
+	color: #333;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	padding-top: 200px;
+	}
+#eargame{
+	width: 800px;
+	height: auto;
+	position: relative;
+	color: #333;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	padding-top: 200px;
+	}
+#eargame h2{
+	color: #630;
+	font-size: 24px;
+	padding-left: 10px;
+	}
+#eargame li{
+	color: #666;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	line-height: 30px;
+	}
+#eargame p{
+	color: #666;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	line-height: 30px;
+	}
+#eargo{
+	width: 800px;
+	height: auto;
+	position: relative;
+	color: #333;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	padding-top: 200px;
+	}
+#eargo h2{
+	color: #630;
+	font-size: 24px;
+	padding-left: 10px;
+	}
+#eargo li{
+	color: #666;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	line-height: 30px;
+	}
+#eargo p{
+	color: #666;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	line-height: 30px;
+	}
+.earbtn{
+	right:20px;
+	top: 150px;
+	position:fixed;
+	}
+.earbtn li{
+	display: inline-block;
+	background-color: #6C0;
+	list-style-type: none;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 20px;
+		}
+.earbtn li a{
+	display: inline-block;
+	list-style-type: none;
+	text-decoration: none;
+	font-size: 16px;
+	color: #FFF;
+	}
+.earbtn li:hover{
+	background-color: #060;	
+		}
+h4{
+	font-family: "微軟正黑體";
+	font-size: 20px;
+	color: #060;
+	
+	}
+td{
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #060;
+	text-align: center;
+	}
+.footer{
+	width: 100%;
+	position: fixed;
+	z-index: 79;
+	bottom: 0px;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	margin-right: auto;
+	margin-left: auto;
+	color:#006;
+	}
+.footer a{
+	width: 150px;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	color:#006;
+	}
+.footer a:hover{
+	color:#00F;
+	}
+
+.header img{
+	width: 300px;
+	height: auto;
+	padding-bottom:-30px;
+}
+.indexmanu{
+	width: 800px;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	}
+.indexmanu li{
+	display: inline-block;
+	width: 150px;
+	font-family: "微軟正黑體";
+	color: #666;
+	font-size: 20px;
+	list-style-type: none;
+	background-color: #FC3;
+	padding: 10px;
+	}
+.indexmanu li:hover{
+	color:#FFF;
+	background-color:#693;
+	}
+
+#all{
+	position:relative;
+	z-index:9;
+	width: 100%;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	}
+.teamgroup {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;	
+
+}
+.teamgroup .group{
+	width: 800px;
+	height:auto;
+	margin-right: auto;
+	margin-left: auto;	
+	position:relative;
+	}
+.teamgroup .group tr td{
+	font-family: "微軟正黑體";
+	font-size: 18px;
+	color: #333;
+	text-align:center;	
+}
+#emailcell{
+	color:#666;
+	font-size:24px;
+	}
+#emailcell p {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #666;
+}
+#tophome{
+	right:0px;
+	top:600px;
+	position:fixed;
+	z-index:77;
+	}
+}
+
+@media only screen and (max-width:1601px)and (min-width: 100px) {
+body{
+	padding:0;
+	margin:0;
+	}
+html{
+	cursor: url(cursor/cursor.cur),default;
+	font-family: "微軟正黑體";
+	font-size: 60px;
+	color: #FFF;
+	text-align: center;
+	}
+a:hover{
+	cursor: url(cursor/handcursor.cur),default;
+	text-decoration: none;
+	}
+.topimg{
+	position:relative;
+	z-index:0;
+	top:0px;
+	}
+.topimg img{
+	 width:100%;
+	 height:auto;
+	}
+
+.bottomimg{
+	position:fixed;
+	z-index:1;
+	bottom:-10px;
+	}
+.bottomimg img{
+	width:100%;
+	height: auto;
+	}
+#Disaster1{
+	position:fixed;
+	z-index:2;
+	left:100px;
+	bottom:0;
+	width:auto;
+	height:400px;
+	animation-name:jump;
+	-moz-animation-name:jump;
+	-ms-animation-name:jump;
+	-webkit-animation-name:jump;
+	animation-duration:2s;
+	-webkit-animation-duration:2s;
+	-moz-animation-duration:2s;
+	-ms-animation-duration:2s;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+	}
+#Disaster2{
+	position:fixed;
+	z-index:3;
+	right:100px;
+	
+	bottom:0;
+	width:auto;
+	height:320px;
+	animation-name:jump2;
+	-moz-animation-name:jump2;
+	-ms-animation-name:jump2;
+	-webkit-animation-name:jump2;
+	animation-duration:2s;
+	-moz-animation-duration:2s;
+	-ms-animation-duration:2s;
+	-webkit-animation-duration:2s;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+	}
+#Image5{
+	position:fixed;
+	z-index:7;
+	left:80px;
+	bottom:10px;
+	width:250px;
+	height:auto; 
+
+	}
+
+#Image6{
+	position:fixed;
+	z-index:8;
+	right:50px;
+	bottom:10px;
+	width:250px;
+	height:auto;
+	
+	}
+/*
+#car{
+	position:absolute;
+	z-index:6;
+	bottom:0px;
+	left:0px;
+	animation-name: car;
+    animation-duration:3s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: 1;
+	animation-fill-mode: both;
+	/*位置在最後一個地方*/
+	
+#bobo{
+	position:absolute;
+	z-index:6;
+	right:30px;
+	top:10px;
+	animation-name:move;
+	-moz-animation-name:move;
+	-ms-animation-name:move;
+	-webkit-animation-name:move;
+	animation-duration:2s;
+	-webkit-animation-duration:2s;
+	-moz-animation-duration:2s;
+	-ms-animation-duration:2s;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	width:200px;
+	height:auto; 
+	}
+@keyframes jump{
+	0%{
+		bottom:-15px;
+		}
+	50%{
+		bottom:0px;
+		}
+	100%{
+		bottom:-15px;
+		}
+}
+
+@keyframes jump2{
+	0%{
+		bottom:0px;
+		}
+	50%{
+		bottom:-15px;
+		}
+	100%{
+		bottom:0px;
+		}
+}
+
+@keyframes move{
+	0%{
+		top:15px;
+		}
+	50%{
+		top:10px;
+		}
+	100%{
+		top:15px;
+		}
+}
+
+.firehome{
+	right: 0;
+	z-index: 20;
+	top: 400px;
+	position: fixed;
+	}
+.firehome li{
+	list-style-type: none;
+	}
+.firehome li a{
+	background-color: #333;
+	font-size: 14px;
+	color: #CCC;
+	text-decoration: none;
+	}	
+.firebanner{
+	position:fixed;
+	z-index:19;
+	top:0;
+	}
+.firebanner img{
+	box-shadow:2px 2px 2px rgba(20%,20%,40%,0.5);
+	}
+.firebtn{
+	right:20px;
+	top: 120px;
+	position:fixed;
+	}
+.firebtn li{
+	display:inline-block;
+	}
+#firecard{
+	width: 800px;
+	height: auto;
+	position: relative;
+	color: #333;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	padding-top: 120px;
+	}
+#firecard h2{
+	color: #630;
+	font-size: 24px;
+	padding-left: 20px;
+	}
+#firecard li{
+	color: #666;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	line-height: 35px;
+	}
+.big{
+	width: 800px;
+	height: auto;
+	}
+
+#firegame{
+	padding-top: 120px;
+	width: 800px;
+	height: auto;
+	position:relative;
+	color: #333;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	}
+#firegame h2{
+	color: #630;
+	font-size: 24px;
+	padding-left: 20px;
+	}
+.text{
+	color: #666;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	line-height: 30px;
+	}
+#firegame li{
+	color: #666;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	line-height: 15px;
+	}
+#firemap{
+	padding-top: 120px;
+	width: 800px;
+	height: auto;
+	position:relative;
+	color: #333;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	}
+#firemap h2{
+	color: #630;
+	font-size: 24px;
+	padding-left: 20px;
+	}
+/*'--fire顯示圖片--*/
+#fire1show{
+	top:360px;
+	left:20px;
+	position:absolute;
+	opacity:0;
+	}
+#fire2show{
+	top:1200px;
+	left:20px;
+	position:absolute;
+	opacity:0;
+	}
+#fire3show{
+	top:3500px;
+	left:20px;
+	position:absolute;
+	opacity:0;
+	}
+/*ear page2*/
+#earcard{
+	width: 800px;
+	height: auto;
+	position: relative;
+	color: #333;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	padding-top: 120px;
+	}
+#earcard h2{
+	color: #630;
+	font-size: 24px;
+	padding-left: 10px;
+	}
+#earcard li{
+	color: #666;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	line-height: 15px;
+	}
+#earcard{
+	width: 800px;
+	height: auto;
+	position: relative;
+	color: #333;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	padding-top: 150px;
+	}
+#eargame{
+	width: 800px;
+	height: auto;
+	position: relative;
+	color: #333;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	padding-top: 120px;
+	}
+#eargame h2{
+	color: #630;
+	font-size: 24px;
+	padding-left: 10px;
+	}
+#eargame li{
+	color: #666;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	line-height: 15px;
+	}
+#eargame p{
+	color: #666;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	line-height: 15px;
+	}
+#eargo{
+	width: 800px;
+	height: auto;
+	position: relative;
+	color: #333;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	padding-top: 150px;
+	}
+#eargo h2{
+	color: #630;
+	font-size: 24px;
+	padding-left: 10px;
+	}
+#eargo li{
+	color: #666;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	line-height: 15px;
+	}
+#eargo p{
+	color: #666;
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	line-height: 15px;
+	}
+.earbtn{
+	right:0px;
+	top: 110px;
+	position:fixed;
+	}
+.earbtn li{
+	display: inline-block;
+	background-color: #6C0;
+	list-style-type: none;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 20px;
+		}
+.earbtn li a{
+	display: inline-block;
+	list-style-type: none;
+	text-decoration: none;
+	font-size: 16px;
+	color: #FFF;
+	}
+.earbtn li:hover{
+	background-color: #060;	
+		}
+h4{
+	font-family: "微軟正黑體";
+	font-size: 20px;
+	color: #060;
+	
+	}
+td{
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #060;
+	text-align: center;
+	}
+.footer{
+	width: 100%;
+	position: fixed;
+	z-index: 79;
+	bottom: 0px;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	margin-right: auto;
+	margin-left: auto;
+	color:#006;
+	}
+.footer a{
+	width: 150px;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	color:#006;
+	}
+.footer a:hover{
+	color:#00F;
+	}
+
+.header img{
+	width: 300px;
+	height: auto;
+	padding-bottom:-30px;
+}
+.indexmanu{
+	width: 800px;
+	height:auto;
+	margin-right: auto;
+	margin-left: auto;	
+	}
+.indexmanu li{
+	display: inline-block;
+	width: 150px;
+	font-family: "微軟正黑體";
+	color: #333;
+	font-size: 20px;
+	list-style-type: none;
+	background-color: #FC3;
+	padding: 10px;
+	}
+.indexmanu li:hover{
+	color:#FFF;
+	background-color:#693;
+	
+	}	
+#all{
+	position:relative;
+	z-index:9;
+	width: 100%;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	}
+.teamgroup {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;	
+
+}
+.teamgroup .group{
+	width: 800px;
+	height:auto;
+	margin-right: auto;
+	margin-left: auto;	
+	position:relative;
+	}
+.teamgroup .group tr td{
+	font-family: "微軟正黑體";
+	font-size: 18px;
+	color: #333;
+	text-align:center;	
+}
+#emailcell{
+	color:#666; 
+	font-size:24px;
+	}
+#emailcell p {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #666;
+}
+#tophome{
+	right:0px;
+	top:600px;
+	position:fixed;
+	z-index:77;
+	}
+ 
+}
+

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-Hant>
+<head>
+<meta charset="utf-8">
+<title>教育機構網站應用程式弱點監測平台</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language=JavaScript>  //該資訊參考於http://www.saraliang.com/archives/706
+        var url = location.search;
+        var rid;
+        if(url.indexOf("?") == -1) {//電腦版網址後方沒有參數，就自動進入手機版判斷程式
+
+	            	        	if(navigator.userAgent.match(/Android|iPhone|iPad/i)) {
+			    	 	window.location = 'http://mewavs.twisc.ncku.edu.tw';
+			    	 }
+
+         }
+
+         if(url.indexOf("?") != -1)  {//電腦版網址後方有參數
+
+            var str = url.substr(1);
+            rid = str.split("=")[1];
+
+   	        if (rid != "web" ){  //且第一個參數不是web，就自動進入手機般判斷程式
+			if(navigator.userAgent.match(/Android|iPhone|iPad/i)) {
+			    	 	window.location = 'http://mewavs.twisc.ncku.edu.tw';
+			    	 }
+	        }
+	    }
+
+</script>
+
+
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+
+<body onLoad="MM_preloadImages('img/downloads.png','img/about.png','/img/Training-Videos.png','img/member.png','img/News.png','img/Q&amp;A.png'')">
+<div id="banner"><img src="img/banner_01_01.png" id="Image1"></div>
+
+<div class="Circle">
+  <img src="img/no.png" width="700" height="700" usemap="#Map" id="Image2">
+  <map name="Map">
+    <area shape="poly"  coords="211,101,352,357,502,108,472,87,431,72,384,63,341,63,304,66,263,77,211,99" href="member.html" onMouseOver="MM_swapImage('Image2','','img/member.png',1)" onMouseOut="MM_swapImgRestore()" >
+    <area shape="poly" coords="353,355,500,110,518,124,540,137,559,155,572,175,589,195,604,210,616,239,625,267,633,289,640,334,642,364,353,357" href="downloads.html" onMouseOver="MM_swapImage('Image2','','img/downloads.png',1)" onMouseOut="MM_swapImgRestore()">
+    <area shape="poly" coords="356,359,642,362,633,423,621,465,598,512,578,541,557,562,516,599,489,615,351,359,356,359" href="about.html?p=about" onMouseOver="MM_swapImage('Image2','','img/about.png',1)" onMouseOut="MM_swapImgRestore()">
+    <area shape="poly" coords="353,360,489,617,471,627,443,639,419,645,384,648,362,652,321,649,290,646,256,637,224,620,190,605,354,361" href="http://ewavs.twisc.ncku.edu.tw/video/video.html" onMouseOver="MM_swapImage('Image2','','img/Training-Videos.png',1)" onMouseOut="MM_swapImgRestore()">
+    <area shape="poly" coords="350,358,213,107,200,114,183,125,163,139,143,157,127,175,109,198,92,228,77,260,68,286,65,307,60,333,59,354,351,355" href="news.html?p=news" onMouseOver="MM_swapImage('Image2','','img/News.png',1)" onMouseOut="MM_swapImgRestore()">
+    <area shape="poly" coords="350,357,190,601,177,595,163,581,137,564,116,536,101,513,84,484,74,439,65,404,60,384,62,358,350,354" href="QA.html?p=qa" onMouseOver="MM_swapImage('Image2','','img/Q&amp;A.png',1)" onMouseOut="MM_swapImgRestore()">
+  </map> 
+</div>
+<div class="footer">通訊地:址701台南市東區大學路一號奇美樓7樓資通安全研究與教學中心  Fax：(06)276-1221  聯絡人：陳先生<a href="mailto:ewavs@crypto.ee.ncku.edu.tw">聯絡我們</a></br>
+建議使用Internet Explorer 6.0、Netscape 6.0以上版本　教育部資訊及科技教育司版權所有  ©2011</br>
+</div>
+</body>
+</html>

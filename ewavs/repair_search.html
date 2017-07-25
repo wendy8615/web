@@ -1,0 +1,1166 @@
+<!doctype html>
+<html lang="zh-Hant>
+<head>
+<meta charset="utf-8">
+<title>教育機構網站應用程式弱點監測平台</title>
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script>
+function Show(){
+	$("#ASPXSS").hide();
+	$("#ASPXXSS").hide();
+	$("#JSPXSS").hide();
+	$("#PHPXSS").hide();
+	$("#ASPSQL").hide();
+	$("#ASPXSQL").hide();
+	$("#JSPSQL").hide();
+	$("#PHPSQL").hide();
+	$("#ASPlist").hide();
+	$("#ASPXlist").hide();
+	$("#JSPlist").hide();
+	$("#PHPlist").hide();
+	$("#ASPbackup").hide();
+	$("#ASPXbackup").hide();
+	$("#JSPbackup").hide();
+	$("#PHPbackup").hide();
+	$("#ASPina").hide();
+	$("#ASPXina").hide();
+	$("#JSPina").hide();
+	$("#PHPina").hide();
+	$("#ASPfiles").hide();
+	$("#ASPXfiles").hide();
+	$("#JSPfiles").hide();
+	$("#PHPfiles").hide();
+	var id1 =  $('#selectID').val()
+	var id2 =  $('#selectID2').val()
+	
+	if(id1=='ASP' && id2=='xss'){
+		$("#ASPXSS").show();
+		}
+	if(id1=='ASPX' && id2=='xss'){
+		$("#ASPXXSS").show();
+		}	
+	if(id1=='JSP' && id2=='xss'){
+		$("#JSPXSS").show();
+		}
+	if(id1=='PHP' && id2=='xss'){
+		$("#PHPXSS").show();
+		}
+	if(id1=='ASP' && id2=='sql'){
+		$("#ASPSQL").show();
+		}
+	if(id1=='ASPX' && id2=='sql'){
+		$("#ASPXSQL").show();
+		}
+	if(id1=='JSP' && id2=='sql'){
+		$("#JSPSQL").show();
+		}
+	if(id1=='PHP' && id2=='sql'){
+		$("#PHPSQL").show();
+		}
+	if(id1=='ASP' && id2=='list'){
+		$("#ASPlist").show();
+		}
+	if(id1=='ASPX' && id2=='list'){
+		$("#ASPXlist").show();
+		}
+	if(id1=='JSP' && id2=='list'){
+		$("#JSPlist").show();
+		}
+	if(id1=='PHP' && id2=='list'){
+		$("#PHPlist").show();
+		}
+	if(id1=='ASP' && id2=='backup'){
+		$("#ASPbackup").show();
+		}
+	if(id1=='ASPX' && id2=='backup'){
+		$("#ASPXbackup").show();
+		}
+	if(id1=='JSP' && id2=='backup'){
+		$("#JSPbackup").show();
+		}
+	if(id1=='PHP' && id2=='backup'){
+		$("#PHPbackup").show();
+		}
+	if(id1=='ASP' && id2=='ina'){
+		$("#ASPina").show();
+		}
+	if(id1=='ASPX' && id2=='ina'){
+		$("#ASPXina").show();
+		}
+	if(id1=='JSP' && id2=='ina'){
+		$("#JSPina").show();
+		}
+	if(id1=='PHP' && id2=='ina'){
+		$("#PHPina").show();
+		}
+	if(id1=='ASP' && id2=='files'){
+		$("#ASPfiles").show();
+		}
+	if(id1=='ASPX' && id2=='files'){
+		$("#ASPXfiles").show();
+		}
+	if(id1=='JSP' && id2=='files'){
+		$("#JSPfiles").show();
+		}
+	if(id1=='PHP' && id2=='files'){
+		$("#PHPfiles").show();
+		}
+		}
+	 
+</script>
+</head>
+
+<body onLoad="MM_preloadImages('img/downloads.png','img/about.png','/img/Training-Videos.png','img/member.png','img/News.png','img/Q&amp;A.png'')">
+<div id="banner"><img src="img/banner_01_01.png" id="Image1">
+<div class="meue">
+<h9><a href="index.html" title="home">回首頁</a></h9>
+<h9><a href="news.html" title="News">最新消息</a></h9>
+<h9><a href="about.html" title="About">關於系統</a></h9>
+<h9><a href="downloads.html" title="download">下載專區</a></h9>
+<h9><a href="QA.html" title="Q&A">問 ＆ 答</a></h9>
+<h9><a href="http://ewavs.twisc.ncku.edu.tw/video/video.html" title="Training">教學影片</a></h9>
+<h9><a href="member.html" title="member">會員專區</a></h9>
+
+<div class="center">
+  <ul>
+ <li><a href="worklist.html" title="worklist">網站維護</a></li>
+ <li><a href="testing.html" title="testing">網站排程</a></li>
+ <li><a href="testing_manage.html" title="testing_m">網站結果</a></li>
+<li><a href="#testing_m.html" title="testing_m">簡易文件檢測</a></li>
+ <li><a href="#repair_search.html" title="testing_m">修補建議查詢</a></li
+ ><li><a href="application.html" title="testing_m">列印檢測同意書</a></li>
+ <li><a href="logout_user.asp">[登出]</a><a href="member/edit.asp" target="cF">[修改]</a></li>
+</ul>
+<div class="search">
+<h2>修補建議查詢</h2>
+<h5>語言選擇:
+<select id="selectID" name="語言選擇"> 
+	   <option value="ASP" id="ASP">ASP</option> 
+	    <option value="ASPX" id="ASPX">ASPX</option> 
+	    <option value="JSP" id="JSP">JSP</option> 
+	    <option value="PHP" id="PHP">PHP</option> 
+</select>
+弱點類型選擇:
+<select id="selectID2" name="弱點類型選擇"> 
+	     <option value="xss" id="xss">XSS</option> 
+	    <option value="sql" id="sql">SQL Injection</option> 
+	    <option value="list" id="list">目錄索引</option> 
+	    <option value="backup" id="backup">備份檔案</option> 
+        <option value="ina" id="ina">不適當配置處理</option> 
+        <option value="files" id="files">惡意檔案執行</option> 
+</select>
+<button type="button" id="send" onclick="Show()" >查詢</button>
+</h5> 
+</div>
+<div id="ASPXSS">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>原始網址：<br>
+透過網頁上的 TextBox控制項輸入資料或直接從IE的URL網址列輸入資料<br>
+</p>
+<h5>防護方法：</h5>
+<p>嚴格限制回傳參數與過濾輸入之特殊字元, 要防止XSS跨站式腳本攻擊主要是要在查詢字元串(QueryString)，表單數據（PostData）以及Cookie甚至HTTP報頭（Header）中防止掉一些javascript關鍵字和一些敏感的字元（單引號，分號）以及SQL語言的關鍵字，以及防止他們使用encode編碼。</p>
+<h5>修護方式：</h5>
+<p>Replace(Replace(Replace(Replace(Replace(變數名稱," ' ",""),"script",""),"<",""),">",""),";","")
+</p>
+<h5>造成影響：</h5>
+<p>此為惡作劇程式、顯示討厭的訊息、廣告視窗等程式或物件。：<br>
+而攻擊者可利用XSS弱點可造成以下更重大的影響與危害：：<br>
+-- 盜取各類用戶帳號，如機器登錄帳號、用戶網銀帳號、各類管理員帳號：<br>
+-- 控制瀏覽器，進而竊取、篡改、添加、刪除企業敏感性資料：<br>
+-- 盜竊企業重要的具有商業價值的資料：<br>
+-- 非法轉帳：<br>
+-- 強制發送電子郵件：<br>
+-- 網站掛馬 ：<br>
+-- 控制受害者機器向其它網站發起攻擊：<br></p>
+</div>
+<div id="ASPXXSS">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>透過網頁上的 TextBox控制項輸入資料或直接從IE的URL網址列輸入資料</p>
+<h5>修護方式：</h5>
+<p><strong>聲明：以下動作可能會導致網站功能出現錯誤，修改弱點程式檔前請先備份檔案。</strong><br>
+Step1: 到網站伺服器預設根目錄C:\Inetpub\wwwroot 或使用者自行設定的目錄，找出弱點程式，並進行備份。<br>
+Step2: 檔案備份完成後，用文字編輯器開啓弱點檔案ex: filename.aspx，搜尋(Ctrl+F)出弱點參數 ex: ControlToValidate="txtName"，在該檔案的位置。
+Step3: 找到弱點參數後，請參閱下列修護方式。<br>
+<br>
+Microsoft 的 Anti-XSS Library 1.5 有足夠的 XSS 弱點防護能量，該函式庫主要概念是將可能成為 XSS 攻擊字串進行編碼，讓輸入或輸出的字串自動變成純文字而非可執行的 script ，詳細資料可參考<a href="https://www.microsoft.com/library/errorpages/smarterror.aspx">Microsoft Anti-Cross Site Scripting Library</a> V1.5網站。</p>
+<h5>造成影響：</h5>
+<p>此為惡作劇程式、顯示討厭的訊息、廣告視窗等程式或物件。<br>
+而攻擊者可利用XSS弱點可造成以下更重大的影響與危害：<br>
+-- 盜取各類用戶帳號，如機器登錄帳號、用戶網銀帳號、各類管理員帳號<br>
+-- 控制瀏覽器，進而竊取、篡改、添加、刪除企業敏感性資料<br>
+-- 盜竊企業重要的具有商業價值的資料<br>
+-- 非法轉帳<br>
+-- 強制發送電子郵件<br>
+-- 網站掛馬<br> 
+-- 控制受害者機器向其它網站發起攻擊<br></p>
+</div>
+<div id="JSPXSS">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>透過網頁上的 TextBox控制項輸入資料或直接從IE的URL網址列輸入資料</p>
+<h5>修護方式：</h5>
+<p>嚴格限制回傳參數與過濾輸入之特殊字元, 要防止XSS跨站式腳本攻擊主要是要在查詢字元串(QueryString)，表單數據（PostData）以及Cookie甚至HTTP報頭（Header）中防止掉一些javascript關鍵字和一些敏感的字元（單引號，分號）以及SQL語言的關鍵字，以及防止他們使用encode編碼。</p>
+<h5>修護方式：</h5>
+<p><strong>聲明：以下動作可能會導致網站功能出現錯誤，修改弱點程式檔前請先備份檔案。</strong><br>
+Step1: 到網站伺服器預設根目錄C:\Program Files\Apache Software Foundation\tomcat\webapps\或使用者自行設定的目錄，找出弱點程式，並進行備份。<br>
+Step2: 檔案備份完成後，用文字編輯器開啓弱點檔案ex: filename.jsp，搜尋(Ctrl+F)出弱點參數 ex: String salary = request.getParameter("argument");，在該檔案的位置。<br>
+Step3: 找到弱點參數後，採下列方式進行修護。<br>
+盡量使用有結構性的輸出機制，例如： (<code><bean:write ......></code>) ，或是 JSTL 的 (<code><c:out value="......"/></code>) ，而不要使用 (<code><%=......%></code>) 這類的方法輸出資料。<br>
+
+範例：<br>
+<% <br>
+RegForm regForm = null;<br> 
+
+if(request.getAttribute("regForm")!=null){ <br>
+regForm=(RegForm) request.getAttribute("regForm");<br> 
+} <br>
+%><br>
+<br>
+修補後：<br>
+<% <br>
+if (regForm!=null){<br> 
+%> <br>
+.....<br> 
+<code><bean:write name="RegForm" property="username"/></code> <br>
+... <br>
+<%}%> <br>
+request.setAttribute("regForm", RegForm);<br></p>
+<h5>造成影響：</h5>
+<p>此為惡作劇程式、顯示討厭的訊息、廣告視窗等程式或物件。<br>
+而攻擊者可利用XSS弱點可造成以下更重大的影響與危害：<br>
+-- 盜取各類用戶帳號，如機器登錄帳號、用戶網銀帳號、各類管理員帳號<br>
+-- 控制瀏覽器，進而竊取、篡改、添加、刪除企業敏感性資料<br>
+-- 盜竊企業重要的具有商業價值的資料<br>
+-- 非法轉帳<br>
+-- 強制發送電子郵件<br>
+-- 網站掛馬 <br>
+-- 控制受害者機器向其它網站發起攻擊<br></p>
+
+</div>
+<div id="PHPXSS">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>透過網頁上的 TextBox控制項輸入資料或直接從IE的URL網址列輸入攻擊字串</p>
+<h5>防護方法：</h5>
+<p>嚴格限制回傳參數與過濾輸入之特殊字元, 要防止XSS跨站式腳本攻擊主要是要在查詢字元串(QueryString)，表單數據（PostData）以及Cookie甚至HTTP報頭（Header）中防止掉一些javascript關鍵字和一些敏感的字元（單引號，分號）以及SQL語言的關鍵字，以及防止他們使用encode編碼。</p>
+<h5>修護方式：</h5>
+<p>聲明：以下動作可能會導致網站功能出現錯誤，修改弱點程式檔前請先備份檔案。<br>
+Step1: 到網站伺服器預設根目錄C:/Program Files/Apache<br> Group/Apache2/htdocs或使用者自行設定的目錄，找出弱點程式，並進行備份。<br>
+Step2: 檔案備份完成後，用文字編輯器開啓弱點檔案ex: filename.php，搜尋(Ctrl+F)出弱點參數ex: $_POST['argument']，在該檔案的位置。<br>
+Step3: 找到弱點參數後，在弱點參數前面加入下列任一函式，ex:<br> addslashes($_POST['argument'])<br>mysql_real_escape_string -- 轉義資料庫語法中的特殊字元<br>
+<code><?php 
+$link = mysql_connect('localhost', 'mysql_user', 'mysql_password'); 
+$item = "Zak's and Derick's Laptop"; 
+$escaped_item = mysql_real_escape_string($item); 
+printf ("Escaped string: %s\n", $escaped_item);
+?></code>
+<br>輸出: Escaped string: Zak\'s and Derick\'s Laptop<br>
+(注: mysql_real_escape_string() 不轉義 % 和 _)<br>
+
+mysql_escape_string -- 轉義一個字符串用于 mysql_query<br>
+<code><?php 
+$item = "Zak's Laptop"; 
+$escaped_item = mysql_escape_string($item); 
+printf ("Escaped string: %s\n", $escaped_item);
+?></code>
+輸出: Escaped string: Zak\'s Laptop <br>
+(注: mysql_escape_string() 不轉義 % 和 _)<br>
+本函數和 mysql_real_escape_string() 完全一樣，除了 mysql_real_escape_string()接受的是一個連接句柄並根據當前字符集轉移字符串之外。mysql_escape_string() 並不接受連接參數，也不管當前字符集設定。<br><br>
+addslashes --- 將字串加上反斜線<br>
+如果你網站空間的php.ini文件的magic_quotes_gpc = off (特殊字元過濾，將「'」 =>「\'」, 「"」=> 「\"」 , 「%00」=> \ 0」)建議 magic_quotes_gpc = off 自己處理特殊字元過濾。<br>由於表單提交的內容可能含有敏感字元，如單引號（'），就導致了SQL injection的漏洞。<br>在這種情況下，我們可以用addslashes()來解決問題，它會自動在敏感字元前添加反斜線。<br>
+<code><?php 
+function quotes($content) 
+{ 
+//如果magic_quotes_gpc=Off，那麼就開始處理
+if (!get_magic_quotes_gpc()) {
+//判斷$content是否爲陣列
+if (is_array($content)) {
+//如果$content是陣列，那麼就處理它的每一個單無
+foreach ($content as $key=>$value) {
+$content[$key] = addslashes($value); 
+} 
+} else { 
+//如果$content不是陣列，那麼就僅處理一次
+addslashes($content); 
+} 
+} else {
+//如果magic_quotes_gpc=On，那麼就不處理
+} 
+//返回$content 
+return $content; 
+}?></code>
+將需要引用在資料庫查詢等等中的字元前面加上反斜線，傳回加上反斜線的字串，這些字元有單引號(')、雙引號( " )、斜線( \ )及NULL(null byte)。<br>
+<br>
+fgetss --- 取得檔案指標所指的行及去除HTML標籤<br>
+語法: string fgetss (int fp, int length [, string allowable_tags])
+說明: 與fgets( )相同，不同處在於此函式會試著去除所讀取檔案中，任何的HTML及PHP的標籤。你可以使用參數allowable_tags來決定那個標籤不被去除。
+<br><br>
+strip_tags --- 去除字串中的HTML和PHP標籤<br>
+語法: string strip_tags (string str [, string allowable_tags])
+說明: 此函式試著從給予的字串中去除所有HTML和PHP標籤，如果是不完整或是假的標籤時則會有錯誤，它和fgetss( )使用相同的方法去除標籤。你可以使用第三個參數來指定不去除那些標籤。 <br>
+<br>利用格式檢查方式避免對數字型別進行的SQL Injection攻擊<br>
+<code>
+<?php </code>
+//1. 判斷是否為數字 is_numeric( )<br>
+If (is_numeric($_POST[‘id’])) { <br>
+$StrSQL ="SELECT Newsid, Newsdesc, NewsContext " & " FROM News WHERE Newsid = " . $_POST['id'];<br>
+}<br>
+mysql_query($StrSQL) or die("Failed query: {$_POST['id']}");<br> 
+//2. 設定使用者輸入為數字 settype( )<br>
+If (settype($_POST['id'], 'integer')) { <br>
+$StrSQL ="SELECT Newsid, Newsdesc, NewsContext FROM News WHERE Newsid = " .<br> $_POST['id'];<br>
+}else { <br>
+echo $_POST['id'] +"非數字";<br> 
+} <br>
+mysql_query($StrSQL) or die("Failed query: {$_POST['id']}");<br> 
+//3. 利用 sprintf( )格式化字串，指定數字型別<br>
+$StrSQL =sprintf("SELECT Newsid, Newsdesc, NewsContext FROM News WHERE Newsid =<br> %d ", $_POST['id']);<br>
+mysql_query($StrSQL) or die("Failed query: {$_POST['id']}");<br>
+?>過濾輸入的惡意內容<br>
+<code><?php</code>
+eregi --- 忽略大小寫的正規表達比對<br>
+//搜尋特殊字元 <br>
+$reg_char="[^[:alnum:]+]"; // 過濾 @#$&%?*$@#~'{}<\ 等特殊符號 <br>
+If (eregi ($reg_char, $_POST['CustomerID'])) {<br>
+header('Location: index.php'); //如果有找到特殊字元，則重導至首頁<br> 
+} else { <br>
+$StrInput=$_POST['CustomerID']; <br>
+} <br>
+$StrSQL ="SELECT CustomerID, CompanyName, ContactName, ContactTitle FROM<br> Customers WHERE CustomerID= ' " . StrInput . " ' ";?><br>
+
+</p>
+<h5>造成影響：</h5>
+<p>此為惡作劇程式、顯示討厭的訊息、廣告視窗等程式或物件。<br>
+而攻擊者可利用XSS弱點可造成以下更重大的影響與危害：<br>
+-- 盜取各類用戶帳號，如機器登錄帳號、用戶網銀帳號、各類管理員帳號<br>
+-- 控制瀏覽器，進而竊取、篡改、添加、刪除企業敏感性資料<br>
+-- 盜竊企業重要的具有商業價值的資料<br>
+-- 非法轉帳<br>
+-- 強制發送電子郵件<br>
+-- 網站掛馬 <br>
+-- 控制受害者機器向其它網站發起攻擊<br>
+</p>
+</div>
+<div id="ASPSQL">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>http://www.test.com/news.asp?id=10 %61nd 5=5</p>
+<h5>防護方法：</h5>
+<p>字串取代或過濾</p>
+<h5>修護方式：</h5>
+<p><code><%</code> 
+Dim id id=Request("id") 
+if Not IsNumeric(id) then '事先聲明了變量，所以可以直接寫進去。否則，就要寫
+Request("id") Response.write "Error!" '反饋錯誤信息 Response.end '中止執行下面的語句
+end if 
+%></p>
+<h5>造成影響：</h5>
+<p>登入攻擊, 利用SQL填空, 將帳號、密碼驗證程式變成無效的程式碼</p>
+</div>
+<div id="ASPXSQL">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>http://www.test.com/news.aspx?id=10 %61nd 5=5</p>
+<h5>防護方法：</h5>
+<p>字串取代或過濾</p>
+<h5>修護方式：</h5>
+<p><strong>聲明：以下動作可能會導致網站功能出現錯誤，修改弱點程式檔前請先備份檔案。</strong>Step1: 到網站伺服器預設根目錄C:\Inetpub\wwwroot或使用者自行設定的目錄，找出弱點程式，並進行備份。<br>
+Step2: 檔案備份完成後，用文字編輯器開啓弱點檔案ex: filename.aspx，搜尋(Ctrl+F)出弱點參數ex: ControlToValidate="txtName"，在該檔案的位置。<br>
+Step3: 找到弱點參數後，在弱點參數前面加入下列任一驗證函式，ex: RegularExpressionValidator<br><br> 
+
+在ASP.NET中可以利用RegularExpressionValidator 控制項及Regex 類別來進行驗證網頁中的控制項或輸入的參數。<br>
+可以使用 Microsoft Visual Studio® .NET 中的內容視窗來設定驗證表示式，也可以在 Page_Load 事件控制碼中動態地設定內容。<br>
+說明如下：<br>
+1. 在Client端對網頁各項輸入控制項進行限制輸入與檢查<br><li>字串欄位：</li><br>
+<code><form id="WebForm" method="post" runat="server">
+<asp:TextBox id="txtName" runat="server"></asp:TextBox>
+<asp:RegularExpressionValidator id="nameRegex" runat="server" ControlToValidate="txtName" ValidationExpression="^[a-zA-Z.] {1,40}$" ErrorMessage="Invalid name">
+</asp:RegularExpressionValidator> 
+</form></code>
+上述表限制txtName欄位僅能輸入字母字元 (小寫和大寫)及 dot (.) 字元，欄位長度限制僅能輸入 40 個字元。<br>
+<li>數字欄位：</li>
+要驗證數字資料，可使用 int 型別執行型別檢查，若要將字串輸入轉換成整數形式，則可利用 Int32.Parse 或 Convert.ToIn32，然後處理因轉換或無效的資料型別而發生的任何 FormatException ，如下所示：
+<code>try<br>
+{<br>
+int i =Int32.Parse(txtAge.Text);<br>
+.....’檢查txtAge欄位是否為數字型別<br>
+}<br>
+catch( FormatException)<br>
+{<br>
+..... ‘例外處理<br>
+}<br></code>
+<br>
+2. 在Server端對網頁各項輸入控制項進行限制輸入與檢查<br>
+輸入控制與檢查尚可利用Regex類別驗證範圍，下例為限制txtName欄位僅能輸入40個字母字元 (小寫和大寫)及 dot (.) 字元。另一例子為對數字型別進行檢查並同時限制僅能輸入0到255。
+<code>try<br>
+{<br>
+//限制txtName欄位僅能輸入字母字元 (小寫和大寫)及 dot (.) 字元。<br>
+//欄位長度限制為 40 個字元<br>
+if (!Regex.IsMatch(txtName, @"^[a-zA-Z.] {1,40}$"))<br>
+{... // 資料符合進行處理}<br>
+catch( FormatException )<br>
+{ ... //例外處理<br>
+　
+// 若轉換無效會發生例外。<br>
+int i = Convert.ToInt32(sInput);<br>
+if ((0 <= i && i <= 255) == true)<br>
+{　// 資料有效，使用數字} <br>
+} <br>
+}<br>
+catch( FormatException )<br><br>
+{ ... }<br></code>
+3. 取代輸入的惡意內容<br>
+<code>' 以 \' 取代單引號<br> 
+Regex badCharReplace = new Regex(@"^([<>""'%;()&])$");<br> 
+string goodChars = badCharReplace.Replace(input, "\'"); <br>
+String StrSQL ="SELECT CustomerID, CompanyName, ContactName, " & "ContactTitle FROM Customers WHERE CustomerID= ' " & StrInput & " ' " ; <br></code>
+<br>
+<code>' 以一個空白字元取代單一個的單引號<br>
+Regex badCharReplace = new Regex(@"^([<>""'%;()&])$");<br>
+string goodChars = badCharReplace.Replace(input, ""); <br>
+String StrSQL ="SELECT CustomerID, CompanyName, ContactName, " & "ContactTitle FROM Customers WHERE CustomerID= ' " & StrInput & " ' " ;<br></code>
+</p>
+<h5>造成影響：</h5>
+<p>數字型參數注入點分析, 判斷是否存在SQL Injection漏洞, 直接從IE的URL網址列輸入資料, 如果加入and 5=5返回正常（就是和原來沒有加 and 5=5時頁面樣子的一樣),而加入 and 5=6返回錯誤（和原來沒有加 and 5=6時頁面的樣子不一樣）, 就可以證明這個頁面存在SQL Injection漏洞。</p>
+</div>
+<div id="JSPSQL">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>http://www.test.com/news?id=10 %61nd 5=5</p>
+<h5>防護方法：</h5>
+<p>字串取代或過濾</p>
+<h5>修護方式：</h5>
+<p><strong>聲明：以下動作可能會導致網站功能出現錯誤，修改弱點程式檔前請先備份檔案。</strong><br>
+Step1: 到網站伺服器預設根目錄C:\Program Files\Apache Software Foundation\tomcat\ webapps\或使用者自行設定的目錄，找出弱點程式，並進行備份。<br>
+Step2: 檔案備份完成後，用文字編輯器開啓弱點檔案ex: filename.jsp，搜尋(Ctrl+F)出弱點參數 ex: String salary = request.getParameter("argument");，在該檔案的位置。<br>
+Step3: 找到弱點參數後，採下列任一方式進行修護。<br>
+<li>字串取代</li>
+// 在前加上反斜線，取代特殊字元<br>
+<code>String StrInput = request.getParameter("Cid");<br>
+StrInput. = StrInput.replace (''','\'');<br>
+StrInput. = StrInput.replace ('%','\%');<br>
+StrInput. = StrInput.replace ('?','\?'');<br>
+StrInput. = StrInput.replace ('*','\*');<br>
+StrInput. = StrInput.replace ('_','\_'');<br>
+StrInput. = StrInput.replace ('|','\|'');<br>
+…<br>
+String StrSQL ="SELECT CustomerID, CompanyName, ContactName, ContactTitle FROM Customers WHERE CustomerID= ' " + StrInput + " ' " ;<br>
+上述方式可以將特殊的字元加上「\」後輸入SQL字串中，避免特殊字元進入資料庫執行，
+亦可將所有的特殊字元取代空白。<br> </code>
+<br>
+// 將所有的特殊字元取代空白<br>
+<code>
+String StrInput = request.getParameter("Cid");<br>
+StrInput. = StrInput.replace (''', '');<br>
+StrInput. = StrInput.replace ('%', '');<br>
+StrInput. = StrInput.replace ('?', '');<br>
+StrInput. = StrInput.replace ('*', '');<br>
+StrInput. = StrInput.replace ('_','');<br>
+StrInput. = StrInput.replace ('|','');<br>
+…<br>
+String StrSQL ="SELECT CustomerID, CompanyName, ContactName, ContactTitle FROM Customers WHERE CustomerID= ' " + StrInput + " ' " ; <br>
+</code>
+<li>過濾輸入的惡意內容</li>
+過濾泛指先檢查所有參數輸入的內容，通常利用搜尋函數進行檢查。 <br>
+// 搜尋特殊字元
+<code><%</code><br>
+…<br>
+public boolean isValidInput(String str)<br>
+{<br>
+if(str.matches("^[:alnum:]+")) return true; // 過濾 @#$&%?*$@#~'{}<\ 等特殊符號<br>
+else return false;<br>
+}<br>
+<br>
+If (ValidInput(req.getParameter("Cid")) {<br>
+// 如果有找到特殊字元，則重導至首頁<br>
+response.sendRedirect("http://xxx/index.htm");<br>
+} else {<br>
+String StrInput= req.getParameter("Cid");<br>
+}<br>
+<br>
+String StrSQL ="SELECT CustomerID, CompanyName, ContactName, ContactTitle FROM Customers WHERE CustomerID= ' " + StrInput +" ' ";<br>
+%> <br>
+<li>利用格式檢查方式避免對數字型別進行的SQL Injection攻擊</li>
+<code>// 判斷是否為數字<br>
+try<br>
+{<br>
+Integer.parseInt(request.getParameter("id"));<br>
+String StrSQL ="SELECT Newsid, Newsdesc, NewsContext FROM News WHERE Newsid = "+ req.getParameter("Nid");<br>
+}<br>
+<br>
+catch (NumberFormatException e)<br>
+{<br>
+System.out.println("Not Number");<br>
+}<br>
+<br>
+String nid = " request.getParameter("id"); // 另一種寫法<br>
+<br>
+if(Character.isDigit(nid.charAt(1))){<br>
+String StrSQL ="SELECT Newsid, Newsdesc, NewsContext FROM News WHERE Newsid = "+ req.getParameter("Nid");<br>
+}else{<br>
+System.out.println(" 不為數字 ");<br>
+}<br>
+</code>
+<li>以prepared statements來設定查詢條件</li>
+<code>// 利用 prepared statements 的方式來避免 SQL Injection 問題<br>
+// 將 StrSQL 視為參數，確保 Injected Code 在資料庫中會被當成純文字<br>
+
+String StrInput = request.getParameter(“Cid”);<br>
+Statement stmt = connection.getStatement();<br>
+
+ String StrSQL ="SELECT CustomerID, CompanyName, ContactName, ContactTitle FROM Customers WHERE CustomerID= ' " + StrInput + " ' " ;<br>
+ResultSet result = Statement.executeQuery(StrSQL);<br>
+<br>
+// 另一種 prepared statements 方式為<br>
+
+PreparedStatement pstmt = conn.prepareStatement("SELECT CustomerID, CompanyName, ContactName, ContactTitle FROM Customers WHERE CustomerID=?;");<br>
+
+pstmt.setString(1, req.getParameter("Cid"));<br></code>
+ </p>
+ <h5>造成影響：</h5>
+ <p>數字型參數注入點分析, 判斷是否存在SQL Injection漏洞, 直接從IE的URL網址列輸入資料, 如果加入and 5=5返回正常（就是和原來沒有加 and 5=5時頁面樣子的一樣),而加入 and 5=6返回錯誤（和原來沒有加 and 5=6時頁面的樣子不一樣）, 就可以證明這個頁面存在SQL Injection漏洞。</p>
+</div>
+<div id="PHPSQL">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>http://www.test.com/news.php?id=10 %61nd 5=5</p>
+<h5>防護方法：</h5>
+<p>字串取代或過濾</p>
+<h5>修護方式：</h5>
+<p><strong>聲明：以下動作可能會導致網站功能出現錯誤，修改弱點程式檔前請先備份檔案。</strong>
+Step1: 到網站伺服器預設根目錄C:\Program Files\Apache Group\Apache2\htdocs或使用者自行設定的目錄，找出弱點程式，並進行備份。<br>
+Step2: 檔案備份完成後，用文字編輯器開啓弱點檔案ex: filename.php，搜尋(Ctrl+F)出弱點參數ex: $_POST['argument']，在該檔案的位置。<br>
+Step3: 找到弱點參數後，在弱點參數前面加入下列任一函式，ex: addslashes($_POST['argument'])<br><br>
+mysql_real_escape_string -- 轉義資料庫語法中的特殊字元<br>
+<code>
+<?php </code><br>
+$link = mysql_connect('localhost', 'mysql_user', 'mysql_password'); <br>
+$item = "Zak's and Derick's Laptop"; <br>
+$escaped_item = mysql_real_escape_string($item); <br>
+printf ("Escaped string: %s\n", $escaped_item);<br>
+?><br>
+輸出: Escaped string: Zak\'s and Derick\'s Laptop<br>
+(注: mysql_real_escape_string() 不轉義 % 和 _)<br>
+<br>
+mysql_escape_string -- 轉義一個字符串用于 mysql_query<br>
+<code><?php</code> <br>
+$item = "Zak's Laptop"; <br>
+$escaped_item = mysql_escape_string($item); <br>
+printf ("Escaped string: %s\n", $escaped_item);<br>
+?><br><br>
+輸出: Escaped string: Zak\'s Laptop<br> 
+(注: mysql_escape_string() 不轉義 % 和 _)<br>
+本函數和 mysql_real_escape_string() 完全一樣，除了 mysql_real_escape_string()接受的是一個連接句柄並根據當前字符集轉移字符串之外。mysql_escape_string() 並不接受連接參數，也不管當前字符集設定。<br>
+<br><br>
+addslashes --- 將字串加上反斜線<br>
+如果你網站空間的php.ini文件的magic_quotes_gpc = off (特殊字元過濾，將「'」 =>「\'」, 「"」=> 「\"」 , 「%00」=> \ 0」)建議 magic_quotes_gpc = off 自己處理特殊字元過濾。由於表單提交的內容可能含有敏感字元，如單引號（'），就導致了SQL injection的漏洞。在這種情況下，我們可以用addslashes()來解決問題，它會自動在敏感字元前添加反斜線。
+<br>
+<code><?php  </code>
+function quotes($content) <br>
+{ <br>
+//如果magic_quotes_gpc=Off，那麼就開始處理<br>
+if (!get_magic_quotes_gpc()) {<br>
+//判斷$content是否爲陣列<br>
+if (is_array($content)) {<br>
+//如果$content是陣列，那麼就處理它的每一個單無<br>
+foreach ($content as $key=>$value) {<br>
+$content[$key] = addslashes($value); <br>
+} <br>
+} else {<br> 
+//如果$content不是陣列，那麼就僅處理一次<br>
+addslashes($content); <br>
+} <br>
+} else {<br>
+//如果magic_quotes_gpc=On，那麼就不處理<br>
+} <br>
+//返回$content<br> 
+return $content; <br>
+}?><br></code>
+將需要引用在資料庫查詢等等中的字元前面加上反斜線，傳回加上反斜線的字串，這些字元<br>有單引號(')、雙引號( " )、斜線( \ )及NULL(null byte)。<br>
+<br>
+fgetss --- 取得檔案指標所指的行及去除HTML標籤<br>
+語法: string fgetss (int fp, int length [, string allowable_tags])
+說明: 與fgets( )相同，不同處在於此函式會試著去除所讀取檔案中，任何的HTML及PHP的標籤。你可以使用參數allowable_tags來決定那個標籤不被去除。<br>
+<br>
+strip_tags --- 去除字串中的HTML和PHP標籤<br>
+語法: string strip_tags (string str [, string allowable_tags])<br>
+說明: 此函式試著從給予的字串中去除所有HTML和PHP標籤，如果是不完整或是假的標籤時則會有錯誤，它和fgetss( )使用相同的方法去除標籤。你可以使用第三個參數來指定不去除那些標籤。<br><br> 
+<p style="color:#C60">利用格式檢查方式避免對數字型別進行的SQL Injection攻擊<br></p>
+<code><?php </code><br>
+//1. 判斷是否為數字 is_numeric( )<br>
+If (is_numeric($_POST[‘id’])) { <br>
+$StrSQL ="SELECT Newsid, Newsdesc, NewsContext " & " FROM News WHERE Newsid = " . $_POST['id'];<br>
+}<br>
+mysql_query($StrSQL) or die("Failed query: {$_POST['id']}");<br><br> 
+//2. 設定使用者輸入為數字 settype( )<br>
+If (settype($_POST['id'], 'integer')) {<br> 
+$StrSQL ="SELECT Newsid, Newsdesc, NewsContext FROM News WHERE Newsid = " . $_POST['id'];<br>
+}else { <br>
+echo $_POST['id'] +"非數字";<br> 
+} <br>
+mysql_query($StrSQL) or die("Failed query: {$_POST['id']}");<br><br> 
+//3. 利用 sprintf( )格式化字串，指定數字型別<br>
+$StrSQL =sprintf("SELECT Newsid, Newsdesc, NewsContext FROM News WHERE Newsid = %d ", $_POST['id']);<br>
+mysql_query($StrSQL) or die("Failed query: {$_POST['id']}");<br>
+?><br> <br> 
+<p style="color:#C60">過濾輸入的惡意內容</p>
+<code><?php</code><br>
+eregi --- 忽略大小寫的正規表達比對<br>
+//搜尋特殊字元 <br>
+$reg_char="[^[:alnum:]+]"; // 過濾 @#$&%?*$@#~'{}<\ 等特殊符號 <br>
+If (eregi ($reg_char, $_POST['CustomerID'])) {<br>
+header('Location: index.php'); //如果有找到特殊字元，則重導至首頁 <br>
+} else { <br>
+$StrInput=$_POST['CustomerID'];<br> 
+} <br>
+$StrSQL ="SELECT CustomerID, CompanyName, ContactName, ContactTitle FROM Customers WHERE CustomerID= ' " . StrInput . " ' ";?><br>
+</p>
+<h5>造成影響：</h5>
+<p>數字型參數注入點分析, 判斷是否存在SQL Injection漏洞, 直接從IE的URL網址列輸入資料, 如果加入and 5=5返回正常（就是和原來沒有加 and 5=5時頁面樣子的一樣),而加入 and 5=6返回錯誤（和原來沒有加 and 5=6時頁面的樣子不一樣）, 就可以證明這個頁面存在SQL Injection漏洞。</p>
+</div>
+<div id="ASPlist">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>伺服器網站設定未關閉瀏覽目錄索引。網頁伺服器若於該目錄不存在預設首頁時，將顯示該目錄中所有檔案內容，若該項目內存在重要資料，如Access資料庫(.dbm)或設定檔(config.inc)，則使用者即可下載取得該機敏內容。</p>
+<h5>防護方法：</h5>
+<p>關閉網站伺服器直接瀏覽目錄索引選項</p>
+<h5>修護方式：</h5>
+<p>以常見的網頁伺服器IIS與Apache來說明:<br>
+若使用IIS伺服器其修護方法如下:<br><br>
+IIS關閉直接瀏覽目錄索引<br>
+1.開啟「開始」功能表，點選「控制台」。<br>
+2.點選「系統管理工具」，開啟「Internet Information Services」。<br>
+3.開啟IIS視窗，選擇「目錄」，瀏覽目錄功 能不要勾選。<br>
+註:所選擇之防護方法在IIS各版畫面上或有差異，請在設定時留意。<br>
+若使用Apache伺服器其修護方法如下:<br><br>
+作法為關閉直接瀏覽目錄索引<br>
+可設定Apache禁止瀏覽目錄下的檔案列表，開啟httpd.conf檔案(路徑為/etc/apache/httpd.conf)，然後將下列程式碼:<br>
+Options Indexes Includes FollowSymLinks
+改寫為<br>
+Options -Indexes Includes FollowSymLinks<br>
+如要全域實施的話，則需在/etc/apache/httpd.conf中找到以下程式碼:<br> 
+Options Indexes Includes FollowSymLinks MultiViews<br>
+改寫為Options -Indexes Includes FollowSymLinks MultiViews<br>
+註: 不同的OS環境，Apache預設安裝路徑可能有所不同，請找到httpd.conf檔，並參考上述之說明關閉目錄索功能。<br></p>
+<h5>造成影響： </h5>
+<p>當開啟目錄索引功能時，則會傳回在這目錄中檔案完整的清單，若沒有開啟Web Server會回應錯誤訊息，表示存取目標資源被拒。<br>如果設定上的疏忽，攻擊者送出要求目錄的請求，而這個目錄又預設開啟indexes，那 Web Server會傳回該目錄下的檔案完整清單，則會導致網頁伺服器上機密資訊的洩漏，雖然攻擊者可能無法存取所列出的檔案，但是透過檔案的名稱攻擊者還是可以獲得伺服器的相關資訊。</p>
+</div>
+<div id="ASPXlist">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>伺服器網站設定未關閉瀏覽目錄索引。網頁伺服器若於該目錄不存在預設首頁時，將顯示該目錄中所有檔案內容，若該項目內存在重要資料，如Access資料庫(.dbm)或設定檔(config.inc)，則使用者即可下載取得該機敏內容。</p>
+<h5>防護方法：</h5>
+<p>關閉網站伺服器直接瀏覽目錄索引選項</p>
+<h5>修護方式：</h5>
+<p>以常見的網頁伺服器IIS與Apache來說明:<br>
+若使用IIS伺服器其修護方法如下:<br>
+IIS關閉直接瀏覽目錄索引<br>
+1.開啟「開始」功能表，點選「控制台」。<br>
+2.點選「系統管理工具」，開啟「Internet Information Services」。<br>
+3.開啟IIS視窗，選擇「目錄」，瀏覽目錄功能不要勾選。<br>
+註:所選擇之防護方法在IIS各版畫面上或有差異，請在設定時留意。<br><br>
+若使用Apache伺服器其修護方法如下:<br>
+作法為關閉直接瀏覽目錄索引<br>
+可設定Apache禁止瀏覽目錄下的檔案列表，開啟httpd.conf檔案(路徑為/etc/apache/httpd.conf)，然後將下列程式碼:<br>
+Options Indexes Includes FollowSymLinks<br>
+改寫為<br>
+Options -Indexes Includes FollowSymLinks<br><br>
+如要全域實施的話，則需在/etc/apache/httpd.conf中找到以下程式碼:<br> 
+Options Indexes Includes FollowSymLinks MultiViews<br>
+改寫為Options -Indexes Includes FollowSymLinks MultiViews<br>
+註: 不同的OS環境，Apache預設安裝路徑可能有所不同，請找到httpd.conf檔，並參考上述之說明關閉目錄索功能。</p>
+<h5>造成影響：</h5>
+<p>當開啟目錄索引功能時，則會傳回在這目錄中檔案完整的清單，若沒有開啟Web Server會回應錯誤訊息，表示存取目標資源被拒。如果設定上的疏忽，攻擊者送出要求目錄的請求，而這個目錄又預設開啟indexes，那 Web Server會傳回該目錄下的檔案完整清單，則會導致網頁伺服器上機密資訊的洩漏，雖然攻擊者可能無法存取所列出的檔案，但是透過檔案的名稱攻擊者還是可以獲得伺服器的相關資訊。</p>
+</div>
+<div id="JSPlist">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>伺服器網站設定未關閉瀏覽目錄索引。網頁伺服器若於該目錄不存在預設首頁時，將顯示該目錄中所有檔案內容，若該項目內存在重要資料，如Access資料庫(.dbm)或設定檔(config.inc)，則使用者即可下載取得該機敏內容。</p>
+<h5>防護方法：</h5>
+<p>關閉網站伺服器直接瀏覽目錄索引選項</p>
+<h5>修護方式：</h5>
+<p>以常見的網頁伺服器IIS與Apache來說明:<br>
+若使用IIS伺服器其修護方法如下:<br>
+IIS關閉直接瀏覽目錄索引<br>
+1.開啟「開始」功能表，點選「控制台」。<br>
+2.點選「系統管理工具」，開啟「Internet Information Services」。<br>
+3.開啟IIS視窗，選擇「目錄」，瀏覽目錄功能不要勾選。<br>
+註:所選擇之防護方法在IIS各版畫面上或有差異，請在設定時留意。<br><br>
+若使用Apache伺服器其修護方法如下:<br>
+作法為關閉直接瀏覽目錄索引<br>
+可設定Apache禁止瀏覽目錄下的檔案列表，開啟httpd.conf檔案(路徑為/etc/apache/httpd.conf)，然後將下列程式碼:<br>
+Options Indexes Includes FollowSymLinks<br>
+改寫為<br>
+Options -Indexes Includes FollowSymLinks<br><br>
+如要全域實施的話，則需在/etc/apache/httpd.conf中找到以下程式碼:<br> 
+Options Indexes Includes FollowSymLinks MultiViews<br>
+改寫為Options -Indexes Includes FollowSymLinks MultiViews<br>
+註: 不同的OS環境，Apache預設安裝路徑可能有所不同，請找到httpd.conf檔，並參考上述之說明關閉目錄索功能。</p>
+<h5>造成影響：</h5>
+<p>當開啟目錄索引功能時，則會傳回在這目錄中檔案完整的清單，若沒有開啟Web Server會回應錯誤訊息，表示存取目標資源被拒。如果設定上的疏忽，攻擊者送出要求目錄的請求，而這個目錄又預設開啟indexes，那 Web Server會傳回該目錄下的檔案完整清單，則會導致網頁伺服器上機密資訊的洩漏，雖然攻擊者可能無法存取所列出的檔案，但是透過檔案的名稱攻擊者還是可以獲得伺服器的相關資訊。</p>
+</div>
+<div id="PHPlist">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>伺服器網站設定未關閉瀏覽目錄索引。網頁伺服器若於該目錄不存在預設首頁時，將顯示該目錄中所有檔案內容，若該項目內存在重要資料，如Access資料庫(.dbm)或設定檔(config.inc)，則使用者即可下載取得該機敏內容。</p>
+<h5>防護方法：</h5>
+<p>關閉網站伺服器直接瀏覽目錄索引選項</p>
+<h5>修護方式：</h5>
+<p>以常見的網頁伺服器IIS與Apache來說明:<br>
+若使用IIS伺服器其修護方法如下:<br>
+IIS關閉直接瀏覽目錄索引<br>
+1.開啟「開始」功能表，點選「控制台」。<br>
+2.點選「系統管理工具」，開啟「Internet Information Services」。<br>
+3.開啟IIS視窗，選擇「目錄」，瀏覽目錄功能不要勾選。<br>
+註:所選擇之防護方法在IIS各版畫面上或有差異，請在設定時留意。<br><br>
+若使用Apache伺服器其修護方法如下:<br>
+作法為關閉直接瀏覽目錄索引<br>
+可設定Apache禁止瀏覽目錄下的檔案列表，開啟httpd.conf檔案(路徑為/etc/apache/httpd.conf)，然後將下列程式碼:<br>
+Options Indexes Includes FollowSymLinks<br>
+改寫為<br>
+Options -Indexes Includes FollowSymLinks<br><br>
+如要全域實施的話，則需在/etc/apache/httpd.conf中找到以下程式碼:<br> 
+Options Indexes Includes FollowSymLinks MultiViews<br>
+改寫為Options -Indexes Includes FollowSymLinks MultiViews<br>
+註: 不同的OS環境，Apache預設安裝路徑可能有所不同，請找到httpd.conf檔，並參考上述之說明關閉目錄索功能。</p>
+<h5>造成影響：</h5>
+<p>當開啟目錄索引功能時，則會傳回在這目錄中檔案完整的清單，若沒有開啟Web Server會回應錯誤訊息，表示存取目標資源被拒。<br>如果設定上的疏忽，攻擊者送出要求目錄的請求，而這個目錄又預設開啟indexes，那 Web Server會傳回該目錄下的檔案完整清單，則會導致網頁伺服器上機密資訊的洩漏，雖然攻擊者可能無法存取所列出的檔案，但是透過檔案的名稱攻擊者還是可以獲得伺服器的相關資訊。</p>
+</div>
+<div id="ASPbackup">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>網頁應用程式上線時，可能由於架構設計存在問題或於網頁應用程式更新後未移除其備份檔，導致攻擊者可藉由分析該備份檔而攻陷該網站系統。<br> 
+網頁程式備份檔案主要是由2種方式產生，第1種是由網頁程式編輯工具(例如Ultra Edit、EmEditor、Notepad++及Emacs等)自動產生，通常以修改程式檔名或副檔名的形式備份，網路上已有許多掃描工具可針對這些常見的自動備份檔案進行探測；第2種是由網頁程式編寫者手動產生，通常會以更改檔名、副檔名或是壓縮的方式備份。</p>
+<h5>防護方法：</h5>
+<p>避免在Web伺服器網頁目錄底下存放任何網頁程式的備份檔，並且關閉網頁程式編輯工具自動備份之功能。</p>
+</h5>修護方式：</h5>
+<p>1. 工具軟體設定上，應檢查網頁程式編輯工具是否具自動備份功能，並關閉編輯工具自動備份之功能。<br> <br> 
+2. 手動備份防護上，雖適當的備份檔命名可以減少被掃描工具找出的機會，但仍建議將備份檔存放在光碟、備份專用硬碟等儲存媒體或是其他較不受網路威脅的主機上。</p>
+<h5>造成影響：</h5>
+<p>可在未經網頁程式解譯的情形下直接被使用者取得程式原始碼，導致攻擊者可能因這些備份的語法或邏輯錯誤而從顯示的訊息得到一些重要的敏感資訊。</p>
+</div>
+<div id="ASPXbackup">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>網頁應用程式上線時，可能由於架構設計存在問題或於網頁應用程式更新後未移除其備份檔，導致攻擊者可藉由分析該備份檔而攻陷該網站系統。<br> 
+網頁程式備份檔案主要是由2種方式產生，第1種是由網頁程式編輯工具(例如Ultra Edit、EmEditor、Notepad++及Emacs等)自動產生，通常以修改程式檔名或副檔名的形式備份，網路上已有許多掃描工具可針對這些常見的自動備份檔案進行探測；第2種是由網頁程式編寫者手動產生，通常會以更改檔名、副檔名或是壓縮的方式備份。</p>
+<h5>防護方法：</h5>
+<p>避免在Web伺服器網頁目錄底下存放任何網頁程式的備份檔，並且關閉網頁程式編輯工具自動備份之功能。</p>
+<h5>修護方式：</h5>
+<p>1. 工具軟體設定上，應檢查網頁程式編輯工具是否具自動備份功能，並關閉編輯工具自動備份之功能。<br> 
+2. 手動備份防護上，雖適當的備份檔命名可以減少被掃描工具找出的機會，但仍建議將備份檔存放在光碟、備份專用硬碟等儲存媒體或是其他較不受網路威脅的主機上。<br> </p>
+<h5>造成影響：</h5>
+<p>可在未經網頁程式解譯的情形下直接被使用者取得程式原始碼，導致攻擊者可能因這些備份的語法或邏輯錯誤而從顯示的訊息得到一些重要的敏感資訊。</p>
+</div>
+<div id="JSPbackup">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>網頁應用程式上線時，可能由於架構設計存在問題或於網頁應用程式更新後未移除其備份檔，導致攻擊者可藉由分析該備份檔而攻陷該網站系統。<br> 
+網頁程式備份檔案主要是由2種方式產生，第1種是由網頁程式編輯工具(例如Ultra Edit、EmEditor、Notepad++及Emacs等)自動產生，通常以修改程式檔名或副檔名的形式備份，網路上已有許多掃描工具可針對這些常見的自動備份檔案進行探測；第2種是由網頁程式編寫者手動產生，通常會以更改檔名、副檔名或是壓縮的方式備份。</p>
+<h5>防護方法：</h5>
+<p>避免在Web伺服器網頁目錄底下存放任何網頁程式的備份檔，並且關閉網頁程式編輯工具自動備份之功能。</p>
+<h5>修護方式：</h5>
+<p>1. 工具軟體設定上，應檢查網頁程式編輯工具是否具自動備份功能，並關閉編輯工具自動備份之功能。<br>
+2. 手動備份防護上，雖適當的備份檔命名可以減少被掃描工具找出的機會，但仍建議將備份檔存放在光碟、備份專用硬碟等儲存媒體或是其他較不受網路威脅的主機上。<br></p>
+<h5>造成影響：</h5>
+<p>可在未經網頁程式解譯的情形下直接被使用者取得程式原始碼，導致攻擊者可能因這些備份的語法或邏輯錯誤而從顯示的訊息得到一些重要的敏感資訊。</p>
+</div>
+<div id="PHPbackup">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5> 
+<p>網頁應用程式上線時，可能由於架構設計存在問題或於網頁應用程式更新後未移除其備份檔，導致攻擊者可藉由分析該備份檔而攻陷該網站系統。 <br>
+網頁程式備份檔案主要是由2種方式產生，第1種是由網頁程式編輯工具(例如Ultra Edit、EmEditor、Notepad++及Emacs等)自動產生，通常以修改程式檔名或副檔名的形式備份，網路上已有許多掃描工具可針對這些常見的自動備份檔案進行探測；第2種是由網頁程式編寫者手動產生，通常會以更改檔名、副檔名或是壓縮的方式備份。</p>
+<h5>防護方法：</h5>
+<p>避免在Web伺服器網頁目錄底下存放任何網頁程式的備份檔，並且關閉網頁程式編輯工具自動備份之功能。</p>
+<h5>修護方式：</h5>
+<p>1. 工具軟體設定上，應檢查網頁程式編輯工具是否具自動備份功能，並關閉編輯工具自動備份之功能。<br>
+2. 手動備份防護上，雖適當的備份檔命名可以減少被掃描工具找出的機會，但仍建議將備份檔存放在光碟、備份專用硬碟等儲存媒體或是其他較不受網路威脅的主機上。<br></p>
+<h5>造成影響：</h5>
+<p>可在未經網頁程式解譯的情形下直接被使用者取得程式原始碼，導致攻擊者可能因這些備份的語法或邏輯錯誤而從顯示的訊息得到一些重要的敏感資訊。</p>
+</div>
+<div id="ASPina">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>若Web server權限設定不當，未管控使用者權限， 允許任意上傳檔案到網站目錄中。攻擊者可利用上傳功能攻擊網站。目前網頁伺服器所使用的傳輸協定HTTP (HyperText Transfer Protocol - 超本文傳輸協定)，提供一種 PUT method 允許Client 端上傳檔案至 Server 端。在大部分的網頁伺服器預設組態下，PUT method 應該是無法隨意使用，因為啟動 PUT method 將使攻擊者可任意上傳檔案至Server端，達到置換網頁的目的，若攻擊者上傳惡意程式至有執行權限的目錄，將可達到更大的破壞。</p>
+<h5>防護方法：</h5>
+<p>謹慎設定網頁伺服器設定，關閉不使用的功能，並正確設定目錄存取權限</p>
+<h5>修護方式：</h5>
+<p>HTTP PUT Method之修復(以常見的網頁伺服器IIS與Apache來說明) ：<br> 
+<b>IIS伺服器之修護方法：</b><br>
+1. 關閉WebDAV <br>
+網站如不使用WebDAV (Web Distributed Authoring andVersioning)，建議將其關閉。欲關閉WebDAV，請執行「regedit.exe」開啟登入編輯程式，於HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W3SVC\Parameters<br><br>
+<p style="background-color:#CCC">加入以下 registry value ：<br>
+
+Value name: DisableWebDAV <br>
+Value data: 1 <br>
+Data type: DWORD<br></p>
+<br>
+修改完後再重新啟動IIS以使用新設定，若要再次啟用 WebDAV 則將其值設為 0。<br>
+2. 確認網站主目錄夾權限<br>
+可執行Internet服務管理員，檢查系統上所有的Web站台的權限，選取Web站台上按右鍵選內容，點選「主目錄」，確認「寫入」權限未被核取，對於其下的所有虛擬目錄也請一併檢查，強化Web所在資料夾。<br>
+3. 強化 Web 所在資料夾<br>
+( 一般為 %SystemDrive%\Inetpub\wwwroot) 存取權限，該資料夾對於 Internet 來賓帳戶(IUSR_MachineName) 或 Everyone 等帳戶，通常僅需提供讀取權限即可。<br>
+註:所選擇之防護方法在IIS各版畫面上或有差異，請在設定修護方法時注意。<br>
+<b>Apache伺服器之修護方法：</b>
+設定修改 httpd.conf ，請在欲保護之網頁目錄上加上<code>< Limit >以及< Limit Except ></code>設定值，例如：<br>
+<p style="background-color:#CCC"> <code> < Limit GET HEAD POST OPTIONS><br>
+Order allow,deny<br><br>
+Allow from all<br><br>
+</ Limit><br>
+<br>
+< LimitExcept GET HEAD POST OPTIONS ><br>
+Order deny,allow<br>
+Deny from all<br>
+</ LimitExcept></code></p><br>
+註:Apache各版httpd.conf參數設定或有差異，請在設定修護方法時注意。<br>
+</p>
+<h5>造成影響：</h5>
+<p>倘若網頁伺服器配置失當將造成網頁被置換或遭受到嚴重的破壞與攻擊。</p>
+</div>
+<div id="ASPXina">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>若Web server權限設定不當，未管控使用者權限， 允許任意上傳檔案到網站目錄中。攻擊者可利用上傳功能攻擊網站。</p>
+<h5>防護方法：</h5>
+<p>謹慎設定網頁伺服器設定，關閉不使用的功能，並正確設定目錄存取權限</p>
+<h5>修護方式：</h5>
+<p>HTTP PUT Method之修復(以常見的網頁伺服器IIS與Apache來說明)：<br> 
+<b>IIS伺服器之修護方法：</b><br>
+1. 關閉WebDAV <br>
+網站如不使用WebDAV (Web Distributed Authoring andVersioning)，建議將其關閉。<br>欲關閉WebDAV，請執行「regedit.exe」開啟登入編輯程式，於HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W3SVC\Parameters<br>
+<p style="background-color:#CCC">加入以下 registry value ：<br> 
+Value name: DisableWebDAV <br> 
+Value data: 1 <br> 
+Data type: DWORD<br> </p>
+修改完後再重新啟動IIS以使用新設定，若要再次啟用 WebDAV 則將其值設為 0。<br>
+2. 確認網站主目錄夾權限<br>
+可執行Internet服務管理員，檢查系統上所有的Web站台的權限，選取Web站台上按右鍵選內容，點選「主目錄」，確認「寫入」權限未被核取，對於其下的所有虛擬目錄也請一併檢查，強化Web所在資料夾。<br>
+3. 強化 Web 所在資料夾<br>
+( 一般為 %SystemDrive%\Inetpub\wwwroot) 存取權限，該資料夾對於 Internet 來賓帳戶(IUSR_MachineName) 或 Everyone 等帳戶，通常僅需提供讀取權限即可。<br>
+註:所選擇之防護方法在IIS各版畫面上或有差異，請在設定修護方法時注意。<br>
+<b>Apache伺服器之修護方法：</b><br>
+設定修改 httpd.conf ，請在欲保護之網頁目錄上加上 <code>< Limit > 以及 < Limit Except ></code> 設定值，例如：
+<p style="background-color:#CCC">
+<code>
+< Limit GET HEAD POST OPTIONS ><br>
+Order allow,deny<br>
+Allow from all<br>
+</ Limit><br>
+<br>
+< LimitExcept GET HEAD POST OPTIONS ><br>
+Order deny,allow<br>
+Deny from all<br>
+</ LimitExcept><br>
+</code>
+</p>
+註:Apache各版httpd.conf參數設定或有差異，請在設定修護方法時注意。<br>
+</p>
+<h5>造成影響：</h5>
+<p>倘若網頁伺服器配置失當將造成網頁被置換或遭受到嚴重的破壞與攻擊。</p>
+</div>
+<div id="JSPina">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>若Web server權限設定不當，未管控使用者權限， 允許任意上傳檔案到網站目錄中。<br>攻擊者可利用上傳功能攻擊網站。目前網頁伺服器所使用的傳輸協定HTTP (HyperText Transfer Protocol - 超本文傳輸協定)，提供一種 PUT method 允許Client 端上傳檔案至 Server 端。<br>在大部分的網頁伺服器預設組態下，PUT method 應該是無法隨意使用，因為啟動 PUT method 將使攻擊者可任意上傳檔案至Server端，達到置換網頁的目的，若攻擊者上傳惡意程式至有執行權限的目錄，將可達到更大的破壞。</p>
+<h5>防護方法：</h5>
+<p>謹慎設定網頁伺服器設定，關閉不使用的功能，並正確設定目錄存取權限</p>
+<h5>修護方式：</h5>
+<p>HTTP PUT Method之修復(以常見的網頁伺服器IIS與Apache來說明)：<br>
+<b>IIS伺服器之修護方法：</b> 
+1. 關閉WebDAV <br>
+網站如不使用WebDAV (Web Distributed Authoring andVersioning)，建議將其關閉。<br>欲關閉WebDAV，請執行「regedit.exe」開啟登入編輯程式，於HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W3SVC\Parameters<br>
+<p style="background-color:#CCC">加入以下 registry value ：<br>
+
+Value name: DisableWebDAV<br> 
+Value data: 1 <br>
+Data type: DWORD<br></p>
+修改完後再重新啟動IIS以使用新設定，若要再次啟用 WebDAV 則將其值設為 0。<br>
+2. 確認網站主目錄夾權限<br>
+可執行Internet服務管理員，檢查系統上所有的Web站台的權限，選取Web站台上按右鍵選內容，點選「主目錄」，確認「寫入」權限未被核取，對於其下的所有虛擬目錄也請一併檢查，強化Web所在資料夾。<br>
+3. 強化 Web 所在資料夾<br>
+( 一般為 %SystemDrive%\Inetpub\wwwroot) 存取權限，該資料夾對於 Internet 來賓帳戶(IUSR_MachineName) 或 Everyone 等帳戶，通常僅需提供讀取權限即可。<br><br>
+註:所選擇之防護方法在IIS各版畫面上或有差異，請在設定修護方法時注意。<br>
+<b>Apache伺服器之修護方法：</b>
+設定修改 httpd.conf ，請在欲保護之網頁目錄上加上 < Limit > 以及 < Limit Except > 設定值，例如：<br>
+<p style="background-color:#CCC">
+< Limit GET HEAD POST OPTIONS ><br>
+Order allow,deny<br>
+Allow from all<br>
+</ Limit><br>
+<br>
+< LimitExcept GET HEAD POST OPTIONS ><br>
+Order deny,allow<br>
+Deny from all<br>
+</ LimitExcept><br>
+</p>
+註:Apache各版httpd.conf參數設定或有差異，請在設定修護方法時注意。<br>
+</p>
+<h5>造成影響：</h5>
+<p>倘若網頁伺服器配置失當將造成網頁被置換或遭受到嚴重的破壞與攻擊。</p>
+</div>
+<div id="PHPina">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>若Web server權限設定不當，未管控使用者權限， 允許任意上傳檔案到網站目錄中。<br>攻擊者可利用上傳功能攻擊網站。目前網頁伺服器所使用的傳輸協定HTTP (HyperText Transfer Protocol - 超本文傳輸協定)，提供一種 PUT method 允許Client 端上傳檔案至 Server 端。<br>在大部分的網頁伺服器預設組態下，PUT method 應該是無法隨意使用，因為啟動 PUT method 將使攻擊者可任意上傳檔案至Server端，達到置換網頁的目的，若攻擊者上傳惡意程式至有執行權限的目錄，將可達到更大的破壞。<br></p>
+<h5>防護方法：</h5>
+<p>謹慎設定網頁伺服器設定，關閉不使用的功能，並正確設定目錄存取權限</p>
+<h5>修護方式：</h5>
+<p>HTTP PUT Method之修復(以常見的網頁伺服器IIS與Apache來說明)：
+<b>IIS伺服器之修護方法：</b>
+1. 關閉WebDAV <br>
+網站如不使用WebDAV (Web Distributed Authoring andVersioning)，建議將其關閉。<br>欲關閉WebDAV，請執行「regedit.exe」開啟登入編輯程式，於HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W3SVC\Parameters<br>
+<p style="background-color:#CCC">
+加入以下 registry value ：<br>
+
+Value name: DisableWebDAV <br>
+Value data: 1 <br>
+Data type: DWORD<br></p>
+<br>
+修改完後再重新啟動IIS以使用新設定，若要再次啟用 WebDAV 則將其值設為 0。<br>
+2. 確認網站主目錄夾權限<br>
+可執行Internet服務管理員，檢查系統上所有的Web站台的權限，選取Web站台上按右鍵選內容，點選「主目錄」，確認「寫入」權限未被核取，對於其下的所有虛擬目錄也請一併檢查，強化Web所在資料夾。<br>
+3. 強化 Web 所在資料夾<br>
+( 一般為 %SystemDrive%\Inetpub\wwwroot) 存取權限，該資料夾對於 Internet 來賓帳戶(IUSR_MachineName) 或 Everyone 等帳戶，通常僅需提供讀取權限即可。<br>
+註:所選擇之防護方法在IIS各版畫面上或有差異，請在設定修護方法時注意。<br>
+<br>
+<b>Apache伺服器之修護方法：</b>
+設定修改 httpd.conf ，請在欲保護之網頁目錄上加上 < Limit > 以及 < Limit Except > 設定值，例如：<br>
+<p style="background-color:#CCC">
+
+< Limit GET HEAD POST OPTIONS ><br>
+Order allow,deny<br>
+Allow from all<br>
+</ Limit><br>
+<br>
+< LimitExcept GET HEAD POST OPTIONS ><br>
+Order deny,allow<br>
+Deny from all<br>
+ 
+</ LimitExcept></p>
+
+註:Apache各版httpd.conf參數設定或有差異，請在設定修護方法時注意。</br>
+</p>
+<h5>造成影響：</h5>
+<p>倘若網頁伺服器配置失當將造成網頁被置換或遭受到嚴重的破壞與攻擊。</p>
+</div>
+<div id="ASPfiles">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>原始網址：<br>
+http://www.example.com/application.asp?YourFile=/aaa/bbb/ccc.asp<br>
+原始具弱點的程式碼:<br>
+report = Request.QueryString("YourFile ")<br>
+<br>
+在撰寫ASP程式時，使用以下函數若沒有防護方法，可能會造成惡意檔案執行弱點<br>
+如 include file()、include virtual() 等等<br></p>
+<h5>防護方法：</h5>
+<p>防護方法有二: <br>
+一是隱藏私有物件參考變數值(對所有需要檔案參照的相關變數進行編碼，或是利用[參考索引值]來替代)<br>
+二是私有物件參考變數驗證(利用白名單的過濾方式，限定該私有物件參考變數的輸入值只能是白名單內所允許的)<br>
+並參考以下建議1.URL上不直接顯示檔案名稱，應以ID取代。<br>2.不以特殊字元為檔名。<br>3.在檔案被儲存到Server端以前，任何檔案名稱都需要脫逸或編碼HTML的特殊字元，最好將整個檔案名稱以獨特的識別符替換掉。<br>4.限制上傳的檔案類型與檔案大小<br></p>
+<h5>修護方式：</h5>
+<p>
+ <table>
+ <caption>若使用參考索引值方式，如</caption>
+ <thead>
+ <tr><th>索引值</th><th>檔名</th><th>	說明</th></tr> 
+ </thead>
+ <tr><td>1</td><td>	file1.doc</td><td>doc檔</td></tr>
+ <tr><td>2</td><td>	file2.txt</td><td>文字檔</td></tr>
+ <tr><td>3</td><td>	file3.pdf</td><td>文字檔</td></tr>
+ </table>
+可修改程式碼如下:<br> 
+Dim FileIndex (2) <br>
+FileIndex[0]="file1.asp"<br> 
+FileIndex[1]="file2.txt" <br>
+FileIndex[2]="file3.html" <br>
+report = FileIndex[Request.QueryString("YourFile ")]<br><br>
+若是網站網頁要讀取file1.txt則網址可調整成:<br>
+http://www.example.com/application.asp?YourFile=1<br>
+若使用白名單過濾的方式，則限定該私有物件參考變數的輸入值只能是白名單內所允許的；<br>
+若使用者輸入的變數值不在白名單內，意即對它進行阻檔。如<br>
+ <table>
+ <thead>
+ <tr><th>允許檔名</th><th>說明</th></tr> 
+ </thead>
+ <tr><td>file1.doc</td><td>	asp檔</td></tr>
+ <tr><td>file2.txt</td><td>	文字檔</td></tr>
+ </table><br>
+ 若網址列有心人士輸入成:<br>
+http://www.example.com/application.asp?YourFile=file3.asp<br>
+則網站就不會去執行file3.asp，也就不會被引入惡意檔案。<br>
+以上所使用的程式碼參數設定，僅為撰寫上的參考，各項參數可依您的需求去訂定。<br>
+<strong>如果受限於某些原因，而一定要讓物件參考路徑直接顯示給使用者，請先確保只擁有權限的使用者才能進行存取動作，以免使用者透過修改參數(file)的方式不當存取。</strong>
+<h5>造成影響：</h5>
+<p>Web應用程式引入來自外部的惡意檔案並執行檔案內容。攻擊者修改URL參數，使伺服器端執行本地或遠端的惡意檔案。</p>
+</p>
+</div>
+<div id="ASPXfiles">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>原始網址：<br>
+http://www.example.com/application.asp?YourFile=/aaa/bbb/ccc.asp<br>
+原始具弱點的程式碼:<br>
+report = Request.QueryString("YourFile ") <br>
+<br>
+在撰寫ASP.net程式時，使用以下函數若沒有防護方法，可能會造成惡意檔案執行弱點<br>
+如 include file()、include virtual() 等等<br></p>
+<h5>防護方法：</h5>
+<p>防護方法有二:<br> 
+一是隱藏私有物件參考變數值(對所有需要檔案參照的相關變數進行編碼，或是利用[參考索引值]來替代)<br>
+二是私有物件參考變數驗證(利用白名單的過濾方式，限定該私有物件參考變數的輸入值只能是白名單內所允許的)<br>
+並參考以下建議URL上不直接顯示檔案名稱，應以ID取代。以特殊字元為檔名。<br>1.在檔案被儲存到Server端以前，任何檔案名稱都需要脫逸或編碼HTML的特殊字元，最好將整個檔案名稱以獨特的識別符替換掉。<br>2.限制上傳的檔案類型與檔案大小<br></p>
+<h5>修護方式：</h5>
+<p>
+ <table>
+ <caption>若使用參考索引值方式，如</caption>
+ <thead>
+ <tr><th>索引值</th><th>檔名</th><th>	說明</th></tr> 
+ </thead>
+ <tr><td>1</td><td>	file1.doc</td><td>doc檔</td></tr>
+ <tr><td>2</td><td>	file2.txt</td><td>文字檔</td></tr>
+ <tr><td>3</td><td>	file3.pdf</td><td>文字檔</td></tr>
+ </table>
+ <br> 
+可修改程式碼如下:<br> 
+Dim FileIndex (2) <br>
+FileIndex[0]="file1.asp"<br> 
+FileIndex[1]="file2.txt" <br>
+FileIndex[2]="file3.html" <br>
+report = FileIndex[Request.QueryString("YourFile ")]<br><br> 
+若是網站網頁要讀取file1.txt則網址可調整成:<br> 
+http://www.example.com/application.asp?YourFile=1<br> 
+若使用白名單過濾的方式，則限定該私有物件參考變數的輸入值只能是白名單內所允許的；<br> 
+若使用者輸入的變數值不在白名單內，意即對它進行阻檔。如<br> 
+<table>
+ <thead>
+ <tr><th>允許檔名</th><th>說明</th></tr> 
+ </thead>
+ <tr><td>file1.doc</td><td>	asp檔</td></tr>
+ <tr><td>file2.txt</td><td>	文字檔</td></tr>
+</table><br>
+若網址列有心人士輸入成:<br>
+http://www.example.com/application.asp?YourFile=file3.asp<br>
+則網站就不會去執行file3.asp，也就不會被引入惡意檔案。<br>
+以上所使用的程式碼參數設定，僅為撰寫上的參考，各項參數可依您的需求去訂定。<br>
+<strong>如果受限於某些原因，而一定要讓物件參考路徑直接顯示給使用者，請先確保只擁有權限的使用者才能進行存取動作，以免使用者透過修改參數(file)的方式不當存取。</strong>
+</p>
+<h5>造成影響：</h5>
+<p>Web應用程式引入來自外部的惡意檔案並執行檔案內容。攻擊者修改URL參數，使伺服器端執行本地或遠端的惡意檔案。</p>
+</div>
+<div id="JSPfiles">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>原始網址:<br> 
+http://www.example.com/ file.jsp? param =gg.txt<br>
+原始具弱點的程式碼:<br>
+<br>
+在撰寫JSP程式時，使用以下函數若沒有防護方法，可能會造成惡意檔案執行弱點<br>
+如 include, java.io.File()、java.io、FileReader() 等等<br></p>
+<h5>防護方法：</h5>
+<p>防護方法有二:<br> 
+一是隱藏私有物件參考變數值(對所有需要檔案參照的相關變數進行編碼，或是利用[參考索引值]來替代)<br>
+二是私有物件參考變數驗證(利用白名單的過濾方式，限定該私有物件參考變數的輸入值只能是白名單內所允許的)<br>
+並參考以下建議URL上不直接顯示檔案名稱，應以ID取代。不以特殊字元為檔名。在檔案被儲存到Server端以前，任何檔案名稱都需要脫逸或編碼HTML的特殊字元，最好將整個檔案名稱以獨特的識別符替換掉。<br>限制上傳的檔案類型與檔案大小<br>
+</p>
+<h5>修護方式：</h5>
+<p>
+ <table>
+ <caption>若使用參考索引值方式，如</caption>
+ <thead>
+ <tr><th>索引值</th><th>檔名</th><th>	說明</th></tr> 
+ </thead>
+ <tr><td>1</td><td>	file1.doc</td><td>doc檔</td></tr>
+ <tr><td>2</td><td>	file2.txt</td><td>文字檔</td></tr>
+ <tr><td>3</td><td>	file3.pdf</td><td>文字檔</td></tr>
+ </table>
+可修改程式碼如下:<br> 
+String fileIndex[] = new String[3]; <br>
+fileIndex[0]="file1.doc";<br>
+fileIndex[1]="file2.txt";<br>
+fileIndex[2]= "file3.pdf";<br>
+<br>
+若是網站網頁要讀取file1.txt則網址可調整成:<br>
+http://www.example.com/file.jsp?param=1<br><br>
+若使用白名單過濾的方式，則限定該私有物件參考變數的輸入值只能是白名單內所允許的；<br>
+若使用者輸入的變數值不在白名單內，意即對它進行阻檔。如<br>
+<table>
+ <thead>
+ <tr><th>允許檔名</th><th>說明</th></tr> 
+ </thead>
+ <tr><td>file1.doc</td><td>	asp檔</td></tr>
+ <tr><td>file2.txt</td><td>	文字檔</td></tr>
+</table>
+ 
+ 若網址列有心人士輸入成:<br>
+http://www.example.com/file.jsp?param=file1.jsp<br>
+則網站就不會去執行file1.jsp，也就不會被引入惡意檔案。<br>
+以上所使用的程式碼參數設定，僅為撰寫上的參考，各項參數可依您的需求去訂定。<br>
+<>font color=”#ff0000”><br>如果受限於某些原因，而一定要讓物件參考路徑直接顯示給使用者，請先確保只擁有權限的使用者才能進行存取動作，以免使用者透過修改參數(file)的方式不當存取。<br></p>
+<h5>造成影響：</h5>
+<p>Web應用程式引入來自外部的惡意檔案並執行檔案內容。<br>攻擊者修改URL參數，使伺服器端執行本地或遠端的惡意檔案。<br></p>
+ </div>
+ <div id="PHPfiles">
+<h2>修護建議</h2>
+<h5>範例介紹：</h5>
+<p>原始網址: <br>
+http://www.example.com/application.php?YourFile=/aaa/bbb/ccc.txt<br>
+原始具弱點之程式碼: <br>
+$report=$_GET[‘YourFile’];<br>
+Include $report;<br>
+在撰寫PHP程式時，使用以下函數若沒有防護方法，可能會造成惡意檔案執行弱點<br>
+如 include(), include_once()、 require()、require_once()、 fopen()、file()、imagecreatefromXXX()、copy()、file_get_contents()、delete()、 unlink()、upload_tmp_dir() 等等<br>
+</p>
+<h5>防護方法：</h5>
+<p>防護方法有二:<br>
+一是隱藏私有物件參考變數值(對所有需要檔案參照的相關變數進行編碼，或是利用[參考索引值]來替代)<br>
+二是私有物件參考變數驗證(利用白名單的過濾方式，限定該私有物件參考變數的輸入值只能是白名單內所允許的)<br>
+並參考以下建議<br>1.URL上不直接顯示檔案名稱，應以ID取代。<br>不以特殊字元為檔名。在檔案被儲存到Server端以前，任何檔案名稱都需要脫逸或編碼HTML的特殊字元，最好將整個檔案名稱以獨特的識別符替換掉。<br>2.限制上傳的檔案類型與檔案大小</p>
+<h5>修護方式：</h5>
+<p><table>
+ <caption>若使用參考索引值方式，如</caption>
+ <thead>
+ <tr><th>索引值</th><th>檔名</th><th>	說明</th></tr> 
+ </thead>
+ <tr><td>1</td><td>	file1.doc</td><td>doc檔</td></tr>
+ <tr><td>2</td><td>	file2.txt</td><td>文字檔</td></tr>
+ <tr><td>3</td><td>	file3.pdf</td><td>文字檔</td></tr>
+ </table><br>
+ 可修改程式碼如下:<br> 
+$FileIndex[0]="file1.doc";<br>
+$FileIndex[1]="file2.txt";<br>
+$FileIndex[2]= "file3.pdf";<br>
+$report = $FileIndex[$_GET[‘YourFile’]];include $report;若是網站網頁要讀取file1.txt則網址可調整成:<br>
+http://www.example.com/application.php?YourFile=1<br><br>
+
+若使用白名單過濾的方式，則限定該私有物件參考變數的輸入值只能是白名單內所允許的；<br>
+若使用者輸入的變數值不在白名單內，意即對它進行阻檔。如<br>
+ 
+<table>
+ <thead>
+ <tr><th>允許檔名</th><th>說明</th></tr> 
+ </thead>
+ <tr><td>file1.doc</td><td>	asp檔</td></tr>
+ <tr><td>file2.txt</td><td>	文字檔</td></tr>
+</table><br>
+若網址列有心人士輸入成:<br>
+http://www.example.com/application.php?param=file3.php<br>
+則網站就不會去執行file3.php，也就不會被引入惡意檔案。<br>
+以上所使用的程式碼參數設定，僅為撰寫上的參考，各項參數可依您的需求去訂定。<br>
+<strong>如果受限於某些原因，而一定要讓物件參考路徑直接顯示給使用者，請先確保只擁有權限的使用者才能進行存取動作，以免使用者透過修改參數(file)的方式不當存取。</strong>
+</p>
+<h5>造成影響：</h5>
+<p>Web應用程式引入來自外部的惡意檔案並執行檔案內容。<br>攻擊者修改URL參數，使伺服器端執行本地或遠端的惡意檔案。</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</body>
+</html>
+ 

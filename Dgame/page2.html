@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf-8'/>
+        <title>逃出地震區 -桌遊</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="colorbox.css" />
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>	
+		<script src="jquery.colorbox.js"></script>
+		<script src="jquery.colorbox-min.js"></script>
+
+
+
+<script>
+$(function(){
+$('#cardli').click(function(){ $('html,body').animate({scrollTop:$('#earcard').offset().top},1500); }); 
+$('#gameli').click(function(){ $('html,body').animate({scrollTop:$('#eargame').offset().top}, 1500); }); 
+$('#mapli').click(function(){ $('html,body').animate({scrollTop:$('#eargo').offset().top}, 1500); });
+
+});
+
+</script>
+<script>
+			$(document).ready(function(){
+				//Examples of how to assign the Colorbox event to elements
+				$(".group1").colorbox({rel:'group1'});
+				
+				
+				//Example of preserving a JavaScript event for inline calls.
+				$("#click").click(function(){ 
+					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+					return false;
+				});
+			});
+		</script>
+	</head>
+<body bgcolor="#D9F4EC">
+<div class="firebanner">
+<img src="img/page2-banner-01.png" width="100%" height="auto"> </div>
+<div class="earbtn">
+<li id="cardli"><a href="#earcard">遊戲配件</a></li>
+<li id="gameli"><a href="#eargame">遊戲玩法</a></li>
+<li id="mapli"><a href="#eargo">遊戲進行</a></li>
+</div>
+<div id="earcard">
+<h2>遊戲配件</h2>
+<li>遊戲卡牌：地震防護牌(防)20張‧避難急救包(避)20張‧地標卡(人)6張‧迷糊牌(缺)15張‧死神地震呼喚牌(震)15張‧災害營救呼喚牌(救)15張</li>
+
+
+<h4>地標卡:</h4>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a class="group1" href="img/ear/古鯽魚潭.jpg"><img src="img/ear/古鯽魚潭.jpg" width="200px" height="auto"></a></td>
+    <td><a class="group1" href="img/ear/永大夜市.jpg"><img src="img/ear/永大夜市.jpg" width="200px" height="auto"></a></td>
+    <td><a class="group1" href="img/ear/永康火車站.jpg"><img src="img/ear/永康火車站.jpg" width="200px" height="auto"></a></td>
+    <td><a class="group1" href="img/ear/永康國民小學.jpg"><img src="img/ear/永康國民小學.jpg" width="200px" height="auto"></a></td>
+  </tr>
+</table>
+<h4>地震防護牌(防):</h4>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a class="group1" href="img/ear/大型電器固.png"><img src="img/ear/大型電器固.png" width="160px" height="auto"></a></td>
+    <td><a class="group1" href="img/ear/易碎物品放安全處.png"><img src="img/ear/易碎物品放安全處.png" width="160px" height="auto"></a></td>
+    <td><a class="group1" href="img/ear/框 大型家具.png"><img src="img/ear/框 大型家具.png"  width="160px" height="auto"></a></td>
+    <td><a class="group1" href="img/ear/框 水塔.png"><img src="img/ear/框 水塔.png" width="160px" height="auto"></a></td>
+    <td><a class="group1" href="img/ear/框 瓦斯桶.png"><img src="img/ear/框 瓦斯桶.png" width="160px" height="auto"></a></td>
+   </tr>
+  <tr>
+    <td><a class="group1"  href="img/ear/框 吊燈.png"><img src="img/ear/框 吊燈.png" width="160px" height="auto"></a></td>
+    <td><a class="group1" href="img/ear/框 招牌.jpg"><img src="img/ear/框 招牌.jpg" width="160px" height="auto"></a></td>
+    <td><a class="group1" href="img/ear/框 樹木.jpg"><img src="img/ear/框 樹木.jpg" width="160px" height="auto"></a></td>
+    <td><a class="group1" href="img/ear/堅固窗框.png"><img src="img/ear/堅固窗框.png" width="160px" height="auto"></a></td>
+    <td><a class="group1" href="img/ear/樓梯.jpg"><img src="img/ear/樓梯.jpg" width="160px" height="auto"></a></td>
+   </tr>
+</table>
+<li>介紹：救援卡有災害營救呼喚牌(救){此卡效果是任何對手使用死神地震呼喚牌後，使地標卡翻面為死神呼喚牌時，可以用此卡解救；陷害卡有死神地震呼喚牌(震){此卡效果是可以對任何玩家使用，可以把地標卡翻面為死神呼喚牌}、迷糊牌(缺){此卡效果是可以對任何對
+手使用，可以折除對手台面上的(防)或(避)一張}；功能卡有避難急救包(避)、地震防護牌
+(缺){此卡為擺放在地標卡下方} </li></br>
+<h4>遊戲卡牌</h4>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+ <tr>
+ <td>避難急救包(避):</td>
+ <td>迷糊牌(缺)</td>
+ <td>死神地震呼喚牌(震)</td>
+ </tr>
+ <tr>
+ <td><a class="group1" href="img/ear/避難包.jpg"><img src="img/ear/避難包.jpg" width="160px" height="auto">/<a></td>
+ <td><a class="group1" href="img/ear/缺乏警覺.jpg"><img src="img/ear/缺乏警覺.jpg" width="160px" height="auto"></a></td>
+ <td><a class="group1" href="img/ear/死神地震召喚牌.png"><img src="img/ear/死神地震召喚牌.png" width="160px" height="auto"></a></td>
+ 
+ </tr>
+</table>
+<h4>災害營救呼喚牌(救)</h4>
+<table>
+<tr>
+ <td><a class="group1"  href="img/ear/救/01-01.png"><img src="img/ear/救/01-01.png" width="160px" height="auto"></a></td>
+ <td><a class="group1"  href="img/ear/救/02-01.png"><img src="img/ear/救/02-01.png" width="160px" height="auto"></a></td>
+ <td><a class="group1"  href="img/ear/救/03-01.png"><img src="img/ear/救/03-01.png" width="160px" height="auto"></a></td>
+ <td><a class="group1"  href="img/ear/救/04-01.png"><img src="img/ear/救/04-01.png" width="160px" height="auto"></a></td>
+ <td><a class="group1"  href="img/ear/救/05-01.png"><img src="img/ear/救/05-01.png" width="160px" height="auto"></a></td>
+</tr>
+<tr>
+ <td><a class="group1"  href="img/ear/救/06-01.png"><img src="img/ear/救/06-01.png" width="160px" height="auto"></a></td>
+ <td><a class="group1"  href="img/ear/救/07-01.png"><img src="img/ear/救/07-01.png" width="160px" height="auto"></a></td>
+ <td><a class="group1"  href="img/ear/救/08-01.png"><img src="img/ear/救/08-01.png" width="160px" height="auto"></a></td>
+ <td><a class="group1"  href="img/ear/救/09-01.png"><img src="img/ear/救/09-01.png" width="160px" height="auto"></a></td>
+ <td><a class="group1"  href="img/ear/救/10-01.png"><img src="img/ear/救/10-01.png" width="160px" height="auto"></a></td>
+ </tr>
+<tr>
+ <td><a class="group1"  href="img/ear/救/11-01.png"><img src="img/ear/救/11-01.png" width="160px" height="auto"></a></td>
+ <td><a class="group1"  href="img/ear/救/12-01.png"><img src="img/ear/救/12-01.png" width="160px" height="auto"></a></td>
+ <td><a class="group1"  href="img/ear/救/13-01.png"><img src="img/ear/救/13-01.png" width="160px" height="auto"></a></td>
+ <td><a class="group1"  href="img/ear/救/14-01.png"><img src="img/ear/救/14-01.png" width="160px" height="auto"></a></td>
+ <td><a class="group1"  href="img/ear/救/15-01.png"><img src="img/ear/救/15-01.png" width="160px" height="auto"></a></td>
+ </tr>
+<tr>
+ <td><a class="group1"  href="img/ear/救/16-01.png"><img src="img/ear/救/16-01.png" width="160px" height="auto"></a></td>
+ <td><a class="group1"  href="img/ear/救/17-01.png"><img src="img/ear/救/17-01.png" width="160px" height="auto"></a></td>
+ <td><a class="group1"  href="img/ear/救/18-01.png"><img src="img/ear/救/18-01.png" width="160px" height="auto"></a></td>
+ <td><a class="group1"  href="img/ear/救/19-01.png"><img src="img/ear/救/19-01.png" width="160px" height="auto"></a></td>
+ <td><a class="group1"  href="img/ear/救/20-01.png"><img src="img/ear/救/20-01.png" width="160px" height="auto"></a></td>
+  </tr>
+ <tr>
+
+</table>
+</div>
+<div id="eargame">
+<h2>遊戲玩法</h2>
+<p>分發遊戲牌(起始):</p>
+<p>1.地震卡隨著玩家人數而決定。</p>
+<li>兩個人玩，發2張地標卡</li>
+<li>三個人玩，發1張地標卡</li>
+<li>四個人玩，發1張地標卡</li>
+<p>2.把遊戲卡牌(地標卡除外)隨機分給每位玩家五張為起始手牌。</p>
+<p>3.把剩餘的遊戲牌放在桌子中央，作為牌庫。</p>
+</div>
+<div id="eargo">
+<h2>遊戲進行</h2>
+<p>1.按回合輪流進行遊戲，每人每回合限出一張牌，然後抽一張牌。</br>
+2.每位玩家開始施發功能卡牌，如果出地震防護牌或急難救助包施發後須放置至於下方擺放。
+</br>
+示意圖:</br></p>
+<a class="group1" href="img/ear/1-01.png"><img src="img/ear/1-01.png" width="300px" height="auto"></a> 
+<p>3.若有任何對手對自己使用死神地震呼喚牌後（出完後放回棄牌卡堆），玩家須將自己的地標卡翻面。
+</br>
+4.迷糊牌可以對任何對手使用，可以折除對手台面上的(防)或(避)一張。</br>
+5.若玩家沒有卡牌可以出時，請丟棄一張功能牌並放入棄牌卡堆內，重新抽一張牌。</br></p>
+<li>棄牌區的遊戲卡牌不可以回收再利用。</li>
+<p>6.若玩家玩到最後的話沒有牌可以抽，請把手上的功能牌玩完。</br>
+7.玩家如果將本身的所有地標卡都收集到二張地震防護牌和二張避難急救包並且維持著正常營救人員牌面則為營救成功，皆為獲勝，遊戲立刻結束。</br>
+示意圖:</br></p>
+<a class="group1" href="img/ear/2-01.png"> <img src="img/ear/2-01.png" width="300px" height="auto"></a>
+</p>
+</div>
+<div class="firehome">
+<li><a href="game.html"> <img src="img/home-01.png" width="60px" height:"auto"></a></li></div>
+</body>
+</html>

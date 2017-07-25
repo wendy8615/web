@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-Hant>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+<script>
+function Show(){
+	$("#selectID").change(function(){
+	 $("#selectID2").addOption($(this).val(), $('#test1 :selected').text.text()) 
+});
+	alert('$(this).val()');
+		}
+</script>
+<style type="text/css">
+#ASPXSS {
+	display:none;
+}
+#ASPXXSS {
+	display:none;
+}
+</style>
+</head>
+
+<body>
+<select id="selectID" name="語言選擇"> 
+	    <option value="ASP" id="ASP">ASP</option> 
+	    <option value="ASPX" id="ASPX">ASPX</option> 
+	    <option value="JSP" id="JSP">JSP</option> 
+	    <option value="PHP" id="PHP">PHP</option> 
+</select>
+弱點類型選擇:
+<select id="selectID2" name="弱點類型選擇"> 
+	    <option value="xss" id="xss">XSS</option> 
+	    <option value="sql" id="sql">SQL Injection</option> 
+	    <option value="list" id="list">目錄索引</option> 
+	    <option value="backup" id="backup">備份檔案</option> 
+        <option value="ina" id="ina">不適當配置處理</option> 
+        <option value="files" id="files">惡意檔案執行</option> 
+</select>
+<button type="submit" id="send" onclick="Show()">查詢</button>
+<div id="ASPXSS">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>0</td>
+    <td>1</td>  
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>3</td>
+  </tr>
+</table>
+
+</div>
+
+<div id="ASPXXSS">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>A</td>
+    <td>B</td>
+  </tr>
+  <tr>
+    <td>C</td>
+    <td>D</td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

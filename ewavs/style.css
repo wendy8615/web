@@ -1,0 +1,502 @@
+@charset "utf-8";
+
+body{
+	width: 100%;
+	height: auto;
+	margin: 0px;
+	padding: 0px;
+	background-image: url(img/body_02_02_02.png);
+	background-repeat: repeat-y;	
+}
+
+#banner{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	z-index: 2;
+	margin-right: auto;
+	margin-left: auto;
+	
+}
+#banner img {
+	width:initial;
+	height: auto;
+	float: left;
+}
+
+.Circle {
+	position: relative;
+	z-index: 3;
+	margin-left: auto;
+	text-align: center;
+	margin-top: 160px;
+	margin-right: auto;
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-bottom: 0px;
+
+}
+.footer {
+	width: 100%;
+	height: 14px;
+	position: relative;
+	z-index: 10;
+	text-align: center;
+	vertical-align: bottom;
+	margin: 0px;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #FFF;
+}
+.footer a{
+	font-family: "微軟正黑體";
+	color: #FFFFD0;
+	text-decoration: underline;
+	}
+#banner >.meue {
+	width: 1200px;
+	height: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 5px;
+}
+#banner .meue h9 {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-color: #FFF;
+	padding: 5px;
+	opacity: 0.8;
+	height: 24px;
+	float: left;
+	width: 150px;
+	
+}
+#banner .meue h9 a {
+	color: #000;
+	text-decoration: none;
+}
+#banner .meue h9 a:hover {
+	color: #F30;
+	text-decoration: none;
+	animation-duration:1.2s;
+	animation-name: slide;
+}
+#banner .meue .center {
+	background-color: #FFF;
+	float: left;
+	margin-right: auto;
+	margin-left: auto;
+	width: 1100px;
+	font-family: "微軟正黑體";
+	font-size: 18px;
+	color: #333;
+	padding-top: 10px;
+	height: auto;
+}
+
+@keyframes slide {
+  from { 
+   	opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+
+.footer2 {
+	width: 100%;
+	height: 14px;
+	position: relative;
+	z-index: 11;
+	text-align: center;
+	vertical-align: bottom;
+	margin: 0px;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #FFF;
+	top:900px;
+}
+.footer2 a{
+	font-family: "微軟正黑體";
+	color: #FFFFD0;
+	text-decoration: underline;
+	}
+	
+.footer3 {
+	width: 100%;
+	height: 14px;
+	position: relative;
+	z-index: 11;
+	text-align: center;
+	vertical-align: bottom;
+	margin: 0px;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #FFF;
+	top:1050px;
+}
+.footer3 a{
+	font-family: "微軟正黑體";
+	color: #FFFFD0;
+	text-decoration: underline;
+	}
+
+.ah {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #333;
+	text-decoration: underline;
+}
+.ah:hover {
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #CCC;
+	text-decoration: underline;
+}
+.word3{
+	font-family: "微軟正黑體";
+	font-size: 18px;
+	color: #333;
+	}
+
+#banner .meue .center ul{
+	font-family: "微軟正黑體";
+	font-size: 16px;
+	color: #333;
+	text-decoration: none;
+	list-style-type: none;
+	line-height: 30px;
+	margin-bottom: -220px;
+	position: relative;
+	z-index: 99;
+	width: 130px;
+}
+
+#banner .meue .center ul li a{
+	color: #666;
+	text-decoration: none;
+	
+	}
+#banner .meue .center ul li a:hover{
+	color: #06C;
+	text-decoration: none;
+	
+}
+
+.search {
+	background-color: #FFF;
+	padding-left: 200px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#ASPXSS {
+	padding-left: 200px;
+	display:none;
+}
+#ASPXSS h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#ASPXSS p {
+	font-size: 12px;
+	color: #333;  
+}
+#ASPXXSS {
+	padding-left: 200px;
+	display:none;
+}
+#ASPXXSS h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#ASPXXSS p {
+	font-size: 12px;
+	color: #333;
+}
+strong{
+	color: #F66;
+	}
+#JSPXSS {
+	padding-left: 200px;
+	display:none;
+}
+#JSPXSS h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#JSPXSS p {
+	font-size: 12px;
+	color: #333;
+}
+#PHPXSS {
+	padding-left: 200px;
+	display:none;
+}
+#PHPXSS h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#PHPXSS p {
+	font-size: 12px;
+	color: #333;
+}
+#ASPSQL {
+	padding-left: 200px;
+	display:none;
+}
+#ASPSQL h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#ASPSQL p {
+	font-size: 12px;
+	color: #333;
+}
+#ASPXSQL {
+	padding-left: 200px;
+	display:none;
+}
+#ASPXSQL h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#ASPXSQL p {
+	font-size: 12px;
+	color: #333;
+}
+#JSPSQL {
+	padding-left: 200px;
+	display:none;
+}
+#JSPSQL h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#JSPSQL p {
+	font-size: 12px;
+	color: #333;
+}
+#PHPSQL {
+	padding-left: 200px;
+	display:none;
+}
+#PHPSQL h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#PHPSQL p {
+	font-size: 12px;
+	color: #333;
+}
+#ASPlist {
+	padding-left: 200px;
+	display:none;
+}
+#ASPlist h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#ASPlist p {
+	font-size: 12px;
+	color: #333;
+}
+#ASPXlist {
+	padding-left: 200px;
+	display:none;
+}
+#ASPXlist h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#ASPXlist p {
+	font-size: 12px;
+	color: #333;
+}
+#JSPlist {
+	padding-left: 200px;
+	display:none;
+}
+#JSPlist h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#JSPlist p {
+	font-size: 12px;
+	color: #333;
+}
+#PHPlist {
+	padding-left: 200px;
+	display:none;
+}
+#PHPlist h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#PHPlist p {
+	font-size: 12px;
+	color: #333;
+}
+#ASPbackup {
+	padding-left: 200px;
+	display:none;
+}
+#ASPbackup h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#ASPbackup p {
+	font-size: 12px;
+	color: #333;
+}
+#ASPXbackup {
+	padding-left: 200px;
+	display:none;
+}
+#ASPXbackup h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#ASPXbackup p {
+	font-size: 12px;
+	color: #333;
+}
+#JSPbackup {
+	padding-left: 200px;
+	display:none;
+}
+#JSPbackup h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#JSPbackup p {
+	font-size: 12px;
+	color: #333;
+}
+#PHPbackup {
+	padding-left: 200px;
+	display:none;
+}
+#PHPbackup h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#PHPbackup p {
+	font-size: 12px;
+	color: #333;
+}
+#ASPina {
+	padding-left: 200px;
+	display:none;
+}
+#ASPina h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#ASPina p {
+	font-size: 12px;
+	color: #333;
+}
+#ASPXina {
+	padding-left: 200px;
+	display:none;
+}
+#ASPXina h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#ASPXina p {
+	font-size: 12px;
+	color: #333;
+}
+#JSPina {
+	padding-left: 200px;
+	display:none;
+}
+#JSPina h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#JSPina p {
+	font-size: 12px;
+	color: #333;
+}
+#PHPina {
+	padding-left: 200px;
+	display:none;
+}
+#PHPina h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#PHPina p {
+	font-size: 12px;
+	color: #333;
+}
+#ASPfiles {
+	padding-left: 200px;
+	display:none;
+}
+#ASPfiles h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#ASPfiles p {
+	font-size: 12px;
+	color: #333;
+}
+#ASPXfiles {
+	padding-left: 200px;
+	display:none;
+}
+#ASPXfiles h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#ASPXfiles p {
+	font-size: 12px;
+	color: #333;
+}
+#JSPfiles {
+	padding-left: 200px;
+	display:none;
+}
+#JSPfiles h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#JSPfiles p {
+	font-size: 12px;
+	color: #333;
+}
+#PHPfiles {
+	padding-left: 200px;
+	display:none;
+}
+#PHPfiles h5 {
+	color: #FFF;
+	background-color: #333;
+}
+#PHPfiles p {
+	font-size: 12px;
+	color: #333;
+}
+code{
+	font-size: 12px;	
+	}
+	.meue .center #ASPfiles table thead {
+	background-color: #333;
+	color: #FFF;
+
+}
+center{
+    overflow:auto;
+    height:650px;
+    font-size:16px
+}
