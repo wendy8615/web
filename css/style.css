@@ -185,67 +185,64 @@ section#section_introduction {
       list-style-type: none;
       width: 400px;
       position: relative; }
-  section#section_introduction .container .col-sm-8 #card_tool {
-    position: absolute;
-    top: -350px; }
-    section#section_introduction .container .col-sm-8 #card_tool svg {
-      height: 100vh; }
-    section#section_introduction .container .col-sm-8 #card_tool body {
-      background-color: #222; }
-    section#section_introduction .container .col-sm-8 #card_tool circle {
+  section#section_introduction .container .col-sm-6 #card_tool {
+    width: 400px;
+    height: 400px; }
+    section#section_introduction .container .col-sm-6 #card_tool svg {
+      width: 100%;
+      height: 100%; }
+    section#section_introduction .container .col-sm-6 #card_tool circle {
       stroke: white;
       -webkit-transition: 0.5s;
       -o-transition: 0.5s;
       transition: 0.5s;
       cursor: pointer; }
-      section#section_introduction .container .col-sm-8 #card_tool circle:hover {
+      section#section_introduction .container .col-sm-6 #card_tool circle:hover {
         fill: transparent;
         -webkit-transform: translate(3px, 3px);
         -ms-transform: translate(3px, 3px);
         transform: translate(3px, 3px); }
   section#section_introduction .container .tri {
     width: 200px;
-    margin-left: 50px; }
-  section#section_introduction .container .col-sm-4 {
-    position: relative; }
-    section#section_introduction .container .col-sm-4 .wrap {
-      width: 100%;
-      margin-top: -220px;
-      margin-left: auto;
-      margin-right: auto;
-      display: inline-block; }
-      section#section_introduction .container .col-sm-4 .wrap .box, section#section_introduction .container .col-sm-4 .wrap .box::before, section#section_introduction .container .col-sm-4 .wrap .box::after {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0; }
-      section#section_introduction .container .col-sm-4 .wrap .box {
-        text-align: center;
-        width: 350px;
-        height: 420px;
-        color: white;
-        -webkit-box-shadow: inset 0 0 0 1px rgba(157, 220, 220, 0.5);
-        box-shadow: inset 0 0 0 1px rgba(157, 220, 220, 0.5);
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        position: relative; }
-        section#section_introduction .container .col-sm-4 .wrap .box ul {
-          list-style-type: none;
-          font-size: 16px;
-          text-align: left;
-          padding: 5px 15px; }
-      section#section_introduction .container .col-sm-4 .wrap .box::before, section#section_introduction .container .col-sm-4 .wrap .box::after {
-        content: '';
-        z-index: 3;
-        margin: -5%;
-        -webkit-box-shadow: inset 0 0 0 2px;
-        box-shadow: inset 0 0 0 2px;
-        -webkit-animation: ClipMe 8s linear infinite;
-        animation: ClipMe 8s linear infinite; }
-      section#section_introduction .container .col-sm-4 .wrap .box::before {
-        -webkit-animation-delay: -4s;
-        animation-delay: -4s; }
+    margin-left: auto;
+    margin-right: auto; }
+  section#section_introduction .container .col-sm-6 .wrap {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block; }
+    section#section_introduction .container .col-sm-6 .wrap .box, section#section_introduction .container .col-sm-6 .wrap .box::before, section#section_introduction .container .col-sm-6 .wrap .box::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0; }
+    section#section_introduction .container .col-sm-6 .wrap .box {
+      text-align: center;
+      width: 350px;
+      height: 420px;
+      color: white;
+      -webkit-box-shadow: inset 0 0 0 1px rgba(157, 220, 220, 0.5);
+      box-shadow: inset 0 0 0 1px rgba(157, 220, 220, 0.5);
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      position: relative; }
+      section#section_introduction .container .col-sm-6 .wrap .box ul {
+        list-style-type: none;
+        font-size: 16px;
+        text-align: left;
+        padding: 5px 15px; }
+    section#section_introduction .container .col-sm-6 .wrap .box::before, section#section_introduction .container .col-sm-6 .wrap .box::after {
+      content: '';
+      z-index: 3;
+      margin: -5%;
+      -webkit-box-shadow: inset 0 0 0 2px;
+      box-shadow: inset 0 0 0 2px;
+      -webkit-animation: ClipMe 8s linear infinite;
+      animation: ClipMe 8s linear infinite; }
+    section#section_introduction .container .col-sm-6 .wrap .box::before {
+      -webkit-animation-delay: -4s;
+      animation-delay: -4s; }
 
 @-webkit-keyframes ClipMe {
   0%, 100% {
