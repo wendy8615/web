@@ -390,10 +390,12 @@ section#section_introduction {
   75% {
     clip: rect(0px, 520px, 520px, 518px); } }
   section#section_introduction .container #bg_x5F_C {
+    -webkit-fill: #9ddcdc;
     fill: #9ddcdc;
-    stroke: none; }
+    -webkit-stroke: none;
+    stroke: none;  }
   section#section_introduction .container #bg_x5F_C > line {
-    fill: none;
+    -webkit-fill: none;
     stroke: #FFF;
     fill: #ffebb7;
     -webkit-transform: rotate(45deg);
@@ -405,11 +407,15 @@ section#section_introduction {
     -webkit-animation: ani 30s infinite;
     animation: ani 30s infinite; }
   section#section_introduction .container #bg_x5F_C > rect {
+    -webkit-fill: #ffebb7;
     fill: #ffebb7;
+    -webkit-stroke: none;
     stroke: none; }
   section#section_introduction .container .center_x5F_C_b {
+    -webkit-fill: #9ddcdc;
     fill: #9ddcdc; }
   section#section_introduction .container .center_x5F_C_s {
+    -webkit-fill: #FFF;
     fill: #FFF; }
   section#section_introduction .container #s_x5F_8 {
     fill: #FFF;
@@ -422,7 +428,9 @@ section#section_introduction {
     -webkit-animation: ani 30s infinite;
     animation: ani 30s infinite; }
   section#section_introduction .container #s_x5F_8:hover {
+    -webkit-fill: #ffebb7;
     fill: #ffebb7;
+    -webkit-fill-opacity: 1;
     fill-opacity: 1; }
 
 @-webkit-keyframes ani {
