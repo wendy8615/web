@@ -28,11 +28,9 @@ header {
       position: absolute;
       top: 50%;
       left: 50%;
-      -o-transform: translate(-50%, -50%);
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
-      -ms-transition: all 0.8s;
       -webkit-transition: all 0.8s;
       -o-transition: all 0.8s;
       transition: all 0.8s;
@@ -52,16 +50,12 @@ header {
         border-radius: 270px;
         top: 460px;
         left: 50%;
-        -o-transform: translateX(-50%);
         -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
         transform: translateX(-50%);
         -webkit-animation: wave 5s infinite linear;
-        -ms-animation: wave 5s infinite linear;
-        -o-animation: wave 5s infinite linear;
         animation: wave 5s infinite linear;
         -webkit-transition: all 0.5s;
-        -ms-transition: all 0.5s;
         -o-transition: all 0.5s;
         transition: all 0.5s; }
       header .icon .btn span {
@@ -70,25 +64,17 @@ header {
 @-webkit-keyframes wave {
   0% {
     -webkit-transform: translateX(-50%) rotate(0deg);
-    -ms-transform: translateX(-50%) rotate(0deg);
-    -o-transform: translateX(-50%) rotate(0deg);
     transform: translateX(-50%) rotate(0deg); }
   100% {
     -webkit-transform: translateX(-50%) rotate(360deg);
-    -ms-transform: translateX(-50%) rotate(360deg);
-    -o-transform: translateX(-50%) rotate(360deg);
     transform: translateX(-50%) rotate(360deg); } }
 
 @keyframes wave {
   0% {
     -webkit-transform: translateX(-50%) rotate(0deg);
-    -o-transform: translateX(-50%) rotate(0deg);
-    -ms-transform: translateX(-50%) rotate(0deg);
     transform: translateX(-50%) rotate(0deg); }
   100% {
     -webkit-transform: translateX(-50%) rotate(360deg);
-    -o-transform: translateX(-50%) rotate(360deg);
-    -ms-transform: translateX(-50%) rotate(360deg);
     transform: translateX(-50%) rotate(360deg); } }
 
 @-webkit-keyframes upin {
@@ -196,136 +182,27 @@ section#section_introduction {
     section#section_introduction .container .row .ability {
       color: #ffebb7;
       font-size: 16px;
-      padding: 10px 20px;
-      padding-left: 0;
       list-style-type: none;
       width: 400px;
-      position: absolute; }
-      section#section_introduction .container .row .ability li.abilityli_html {
-        width: 100%;
-        height: 30px;
-        border: solid 1px #FFF;
-        display: block;
-        font-size: 16px;
-        display: inline-block;
-        color: #FFF;
-        line-height: 30px;
-        padding-left: 30px;
-        margin: 5px 0px;
-        cursor: pointer; }
-        section#section_introduction .container .row .ability li.abilityli_html:hover:after {
-          color: #3e3a39;
-          background-color: rgba(255, 255, 255, 0.4);
-          width: 70%;
-          height: 30px;
-          left: 0; }
-        section#section_introduction .container .row .ability li.abilityli_html:after {
-          content: "";
-          width: 0px;
-          position: absolute;
-          -webkit-transition: width 0.5s;
-          -o-transition: width 0.5s;
-          transition: width 0.5s; }
-      section#section_introduction .container .row .ability li.abilityli_css {
-        width: 100%;
-        height: 30px;
-        border: solid 1px #FFF;
-        display: block;
-        font-size: 16px;
-        display: inline-block;
-        color: #FFF;
-        line-height: 30px;
-        padding-left: 30px;
-        margin: 5px 0px;
-        cursor: pointer; }
-        section#section_introduction .container .row .ability li.abilityli_css:hover:after {
-          color: #3e3a39;
-          background-color: rgba(255, 255, 255, 0.3);
-          width: 60%;
-          height: 30px;
-          left: 0; }
-        section#section_introduction .container .row .ability li.abilityli_css:after {
-          content: "";
-          width: 0px;
-          position: absolute;
-          -webkit-transition: width 0.5s;
-          -o-transition: width 0.5s;
-          transition: width 0.5s; }
-      section#section_introduction .container .row .ability li.abilityli_js {
-        width: 100%;
-        height: 30px;
-        border: solid 1px #FFF;
-        display: block;
-        font-size: 16px;
-        display: inline-block;
-        color: #FFF;
-        line-height: 30px;
-        padding-left: 30px;
-        margin: 5px 0px;
-        cursor: pointer; }
-        section#section_introduction .container .row .ability li.abilityli_js:hover:after {
-          color: #3e3a39;
-          background-color: rgba(255, 255, 255, 0.3);
-          width: 50%;
-          height: 30px;
-          left: 0; }
-        section#section_introduction .container .row .ability li.abilityli_js:after {
-          content: "";
-          width: 0px;
-          position: absolute;
-          -webkit-transition: width 0.5s;
-          -o-transition: width 0.5s;
-          transition: width 0.5s; }
-      section#section_introduction .container .row .ability li.abilityli_ai {
-        width: 100%;
-        height: 30px;
-        border: solid 1px #FFF;
-        display: block;
-        font-size: 16px;
-        display: inline-block;
-        color: #FFF;
-        line-height: 30px;
-        padding-left: 30px;
-        margin: 5px 0px;
-        cursor: pointer; }
-        section#section_introduction .container .row .ability li.abilityli_ai:hover:after {
-          color: #3e3a39;
-          background-color: rgba(255, 255, 255, 0.3);
-          width: 70%;
-          height: 30px;
-          left: 0; }
-        section#section_introduction .container .row .ability li.abilityli_ai:after {
-          content: "";
-          width: 0px;
-          position: absolute;
-          -webkit-transition: width 0.5s;
-          -o-transition: width 0.5s;
-          transition: width 0.5s; }
-      section#section_introduction .container .row .ability li.abilityli_ps {
-        width: 100%;
-        height: 30px;
-        border: solid 1px #FFF;
-        display: block;
-        font-size: 16px;
-        display: inline-block;
-        color: #FFF;
-        line-height: 30px;
-        padding-left: 30px;
-        margin: 10px 0px;
-        cursor: pointer; }
-        section#section_introduction .container .row .ability li.abilityli_ps:hover:after {
-          color: #3e3a39;
-          background-color: rgba(255, 255, 255, 0.3);
-          width: 50%;
-          height: 30px;
-          left: 0; }
-        section#section_introduction .container .row .ability li.abilityli_ps:after {
-          content: "";
-          width: 0px;
-          position: absolute;
-          -webkit-transition: width 0.5s;
-          -o-transition: width 0.5s;
-          transition: width 0.5s; }
+      position: relative; }
+  section#section_introduction .container .col-sm-8 #card_tool {
+    position: absolute;
+    top: -350px; }
+    section#section_introduction .container .col-sm-8 #card_tool svg {
+      height: 100vh; }
+    section#section_introduction .container .col-sm-8 #card_tool body {
+      background-color: #222; }
+    section#section_introduction .container .col-sm-8 #card_tool circle {
+      stroke: white;
+      -webkit-transition: 0.5s;
+      -o-transition: 0.5s;
+      transition: 0.5s;
+      cursor: pointer; }
+      section#section_introduction .container .col-sm-8 #card_tool circle:hover {
+        fill: transparent;
+        -webkit-transform: translate(3px, 3px);
+        -ms-transform: translate(3px, 3px);
+        transform: translate(3px, 3px); }
   section#section_introduction .container .tri {
     width: 200px;
     margin-left: 50px; }
@@ -390,12 +267,10 @@ section#section_introduction {
   75% {
     clip: rect(0px, 520px, 520px, 518px); } }
   section#section_introduction .container #bg_x5F_C {
-    -webkit-fill: #9ddcdc;
     fill: #9ddcdc;
-    -webkit-stroke: none;
-    stroke: none;  }
+    stroke: none; }
   section#section_introduction .container #bg_x5F_C > line {
-    -webkit-fill: none;
+    fill: none;
     stroke: #FFF;
     fill: #ffebb7;
     -webkit-transform: rotate(45deg);
@@ -407,15 +282,11 @@ section#section_introduction {
     -webkit-animation: ani 30s infinite;
     animation: ani 30s infinite; }
   section#section_introduction .container #bg_x5F_C > rect {
-    -webkit-fill: #ffebb7;
     fill: #ffebb7;
-    -webkit-stroke: none;
     stroke: none; }
   section#section_introduction .container .center_x5F_C_b {
-    -webkit-fill: #9ddcdc;
     fill: #9ddcdc; }
   section#section_introduction .container .center_x5F_C_s {
-    -webkit-fill: #FFF;
     fill: #FFF; }
   section#section_introduction .container #s_x5F_8 {
     fill: #FFF;
@@ -428,9 +299,7 @@ section#section_introduction {
     -webkit-animation: ani 30s infinite;
     animation: ani 30s infinite; }
   section#section_introduction .container #s_x5F_8:hover {
-    -webkit-fill: #ffebb7;
     fill: #ffebb7;
-    -webkit-fill-opacity: 1;
     fill-opacity: 1; }
 
 @-webkit-keyframes ani {
