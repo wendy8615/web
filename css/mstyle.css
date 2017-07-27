@@ -13,6 +13,7 @@ html, body {
   position: absolute;
   left: 50%;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -22,44 +23,62 @@ html, body {
 }
 
 #bg_x5F_C > line {
+  -webkit-fill: none;
   fill: none;
+  -webkit-stroke: #f2f2f2;
   stroke: #f2f2f2;
+  -webkit-fill: #ffd480;
   fill: #ffd480;
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+  -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
+  -webkit-animation: ani 30s both;
   animation: ani 30s both;
 }
 
 #bg_x5F_C > rect {
+  -webkit-fill: #ff8c66;
   fill: #ff8c66;
   stroke: none;
+  -webkit-stroke: none;
 }
 
 .center_x5F_C_b {
   fill: #ffd480;
+  -webkit-fill: #ffd480;
 }
 
 .center_x5F_C_s {
   fill: #f2f2f2;
+  -webkit-fill: #f2f2f2;
 }
 
 #s_x5F_8 {
   fill: #ffd480;
+  -webkit-fill: #ffd480;
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+  -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
+  -webkit-animation: ani 30s both;
   animation: ani 30s both;
 }
 
 #s_x5F_8:hover {
+  -webkit-fill: #ffffb3;
   fill: #ffffb3;
+  -webkit-fill-opacity: 1;
   fill-opacity: 1;
 }
 
 @keyframes ani {
   0% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
     transform: translate(0, 0) rotate(0deg);
   }
   100% {
+    -webkit-transform: translate(0, 0) rotate(360deg);
     transform: translate(0, 0) rotate(360deg);
   }
 }
